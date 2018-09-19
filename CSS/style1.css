@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.head2{
+    font-weight:100px;
+    color: white;
+    font-size:20px;
+    text-decoration: none;
+    
+}
+
+.head{
+    font-weight:100px;
+    margin-left:100px;
+    color: white;
+
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+ .sidenav{
+    position: absolute;
+    top: 220;
+    left: 10%;
+    transform: translate(-30%,-50%);
+    height: 87%;
+    width: 30%;
+    background: rgba(23,67,88,0.5);
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 20px;
+    margin-top: 175px;
+    padding: 35px;
+}
+
+
+
+.notice{
+    font-weight:bold;
+    margin-left:5px;
+    font-size:30px;
+    
+}
+
+#box_log {
+    position: absolute;
+    top: 220;
+    left: 55%;
+    transform: translate(10%,-50%);
+    height: 87%;
+    width: 60%;
+    background: rgba(23,67,88,0.5);
+    color:#fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 20px;
+    margin-top: 175px;
+    padding: 35px;
+}
+
+h2{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:30px;
+}
+
+.UNPW{
+    font-size:25px;
+    
+}
+
+.inputvalues{
+	width:250px;
+	margin:0 auto;
+	padding:5px;
+}
+
+body{
+	
+	opacity: 1;
+	background-position:center;
+	
+}
+
+.loginbtn{
+	margin-top:10px;
+	background-color:#27ae60;
+	padding:5px;
+	color:white;
+	width:400px;
+	font-size:18px;
+	font-weight:bold;
+	
+}
+
+.regbtn{
+	margin-top:10px;
+	background-color:#3498db;
+	padding:5px;
+	color:white;
+	width:200px;
+	font-size:18px;
+    font-weight:bold;
+
+}
+
+.image-slider{
+    background-image: url(../img/index.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: slider 20s infinite;
+}
+
+@keyframes slider{
+    0%{
+      background-image: url(../img/1.jpg); 
+    }
+    25%{
+      background-image: url(../img/2.jpg); 
+    }
+    50%{
+      background-image: url(../img/10.jpg); 
+    }
+    100%{
+      background-image: url(../img/11.jpg); 
+    }
+}
+
+
+
+
+
+#box {
+    position: absolute;
+    top: 220;
+    left: 55%;
+    transform: translate(-30%,-50%);
+    height: 87%;
+    width: 60%;
+    background: rgba(23,67,88,0.5);
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    border-radius: 20px;
+    margin-top: 175px;
+    padding: 35px;
+}
+
+.data1{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+    color: white;
+    font-size: 20px;
+
+}
+
+.box input{
+	width:100%;
+	margin-bottom:20px;
+}
+
+.box input[type="text"], input[type="password"]{
+	border:none;
+	border-bottom: 1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+}
+
+
+
+.box input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.box input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#39dc79;
+	color:#000;
+}
+
+.signupbtn{
+	margin-top:10px;
+	background-color:#3498db;
+	padding:5px;
+	color:white;
+	width:200px;
+	font-size:18px;
+	font-weight:bold;
+    margin-left: 30%;
+    
+}
+
+
+/* Back button*/
+.backbtn{
+	margin-top:10px;
+	background-color:red;
+	padding:5px;
+	color:white;
+	width:200px;
+	font-size:18px;
+	font-weight:bold;
+    margin-left: 50%;
+    
+}
+
+.databtn{
+   
+    border-radius:10px;
+    border: none;
+    color: Black;
+    padding: 8px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    font-weight: bold;
+    background-color: white;
+    width: 300px;
+    margin-left: 5%;
+}
+
+.logoutbtn{
+    border-radius:10px;
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 4px;
+    font-weight: bold;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    margin-left: 80%;
+}
+.btn{
+    border-radius:10px;
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 4px;
+    font-weight: bold;
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    margin-left: 0%;
+    
+}
+
+.myform{
+	width:450px;
+	margin: 0 auto;
+
