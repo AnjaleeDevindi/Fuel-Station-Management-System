@@ -54,7 +54,7 @@
                 </table>
                     <table align=center>
                     <tr>
-                    <td><a href="registeras.php"><button type="button" class="btn">Submit</button></a></td>
+                    <td><a href="registeras.php"><button type="button" class="btn">Submt</button></a></td>
                     
                     
                     <td><a href="staffregcashier.php"><button type="button" class="btn">New Record</button></a></td>

@@ -39,7 +39,7 @@
 		}
 	?>
 
-		 <?php
+		<!--  <?php
                if(isset($_SESSION['name'])){
                     if($_SESSION['name'] != null){
         ?>
@@ -53,7 +53,7 @@
                     }
                }
                 
-        ?>
+        ?> -->
 	</body>
 </html>
 
