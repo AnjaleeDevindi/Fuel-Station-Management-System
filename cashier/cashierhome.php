@@ -21,9 +21,29 @@
             <br><br>
                     
                     <a href="cashierdebtor.php"><button type="button" class="databtn">Debtor Deposits</button></a>
-               
+                  <br>
+            <br>
+        <br>
+<br>
+<br>
+     <br>
+    
+            <a href="../index/index.php"><button type="button" class="databtn">Home</button></a>
+            <br>
+          
+           
                 
-                    
+                      <br>
+            <br>
+        <br>
+<br>
+<br>
+     <br>
+    
+          <!--   <a href="../index/index.php"><button type="button" class="databtn">Home</button></a>
+            <br>
+          
+             -->
 
                 
             

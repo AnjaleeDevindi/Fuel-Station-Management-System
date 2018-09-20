@@ -44,7 +44,17 @@
             
             <a href=".php"><button type="button" class="databtn">Pumper Leaves Details</button></a>
             <br>
-            
+               <br>
+            <br>
+        <br>
+<br>
+<br>
+     <br>
+    
+            <a href="../index/index.php"><button type="button" class="databtn">Home</button></a>
+            <br>
+          
+           
             
             </center>
         </div>

@@ -4,7 +4,7 @@
     <head>
         <?php include '../include/header.php' ?>
 
-        <title>Home</title>
+        <title>Staff Register</title>
         
         <link rel="stylesheet" type="text/css" href="../CSS/style1.css"/>
         
@@ -45,16 +45,16 @@
                    </tr> 
                    <tr> 
                 <td><p class=data1>Password</p></td>
-                <td><input type="password" placeholder="Enter Password" name="password" required></td>
+                <td><input type="password" placeholder="Enter Password" name="password" id="password" required></td>
                     </tr>
                     <tr>
                 <td><p class=data1>Confirm Password</p></td>
-                <td><input type="password" placeholder="Enter Password" name="cpassword" required></td>
+                <td><input type="password" placeholder="Enter Password" name="cpassword" id="confirm_password" required> </td>
                     </tr>
                 </table>
                     <table align=center>
                     <tr>
-                    <td><a href="registeras.php"><button type="button" class="btn">Submt</button></a></td>
+                    <td><button type="submit" class="btn" name="Register">Register</button></td>
                     
                     
                     <td><a href="staffregcashier.php"><button type="button" class="btn">New Record</button></a></td>
@@ -75,10 +75,29 @@
             </form>
             
             </center>
+        <script type="text/javascript">
+
+            var password = document.getElementById("password");
+             var confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword(){
+                 if(password.value != confirm_password.value) {
+                     confirm_password.setCustomValidity("Passwords Don't Match");
+                 } else {
+                     confirm_password.setCustomValidity('');
+                    }
+                    }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+            function validateuser(){
+
+            }
+        </script>
+         
         
-        
-        
-        <?php
+       <!--  <?php
 			if(isset($_POST['register']))
 			{
 				$fname=$_POST['fname'];
@@ -131,9 +150,9 @@
 				}
 				else
 				{
-					echo '<script type="text/javascript">alert("Password and Confirm Password do not match")</script>';
+				// 	echo '<script type="text/javascript">alert("Password and Confirm Password do not match")</script>';
+				// }
 				}
-				
 			}
 
 		?>
@@ -142,8 +161,9 @@
         
         
 
+        
+                  -->
         </div>
-                 <?php include '../include/footer.php' ?>
-  
+        <?php include '../include/footer.php' ?>
     </body>
         </html>

@@ -1,13 +1,13 @@
 <?php
 	session_start();
-	require_once('config.php');
+	// require_once('config.php');
 	//phpinfo();
 ?>
 <html>
     <head>
         <?php include '../include/header.php' ?>
 
-        <title>Home</title>
+        <title>Staff Register</title>
         
         <link rel="stylesheet" type="text/css" href="../CSS/style1.css"/>
         
@@ -17,8 +17,12 @@
     
     <div id="box">
         <center><h2> Register Staff </h2>
-            <form action="staffregDEO.php" method="post">
+            <form action="staffregDEOin.php" method="post">
                 <table cellspacing="5">
+                     <tr>
+                <td><p class=data1>NIC</p></td>
+                <td><input name="nic" type="text" class="inputvalues" placeholder="enter your nic number" required></td>
+                    </tr>
                     <tr>
                 <td><p class=data1>First Name</p></td>
                 <td><input name="fname" type="text" class="inputvalues" placeholder="Type your first name" required></td>
@@ -28,17 +32,14 @@
                 <td><input name="lname" type="text" class="inputvalues" placeholder="Type your last name" required><br></td>
                     </tr>
                     <tr>
-                <td><p class=data1>NIC</p></td>
-                <td><input name="nic" type="text" class="inputvalues" placeholder="enter your nic number" required></td>
-                    </tr>
+                <td><p class=data1>Contact Number</p></td>
+                <td><input name="phone" type="text" class="inputvalues" placeholder="enter your contact number" required></td>
+                </tr>
                     <tr>
                 <td><p class=data1>Address</p></td>
                 <td><input name="address" type="text" class="inputvalues" placeholder="enter your address" required></td>
                     </tr>
-                    <tr>
-                <td><p class=data1>Contact Number</p></td>
-                <td><input name="phone" type="text" class="inputvalues" placeholder="enter your contact number" required></td>
-                </tr>
+                   
                    
                 <tr>
                 <td><p class=data1>Username</p></td>
@@ -46,11 +47,11 @@
                    </tr> 
                    <tr> 
                 <td><p class=data1>Password</p></td>
-                <td><input type="password" placeholder="Enter Password" name="password" required></td>
+                <td><input type="password" placeholder="Enter Password" name="password" id="password" required></td>
                     </tr>
                     <tr>
                 <td><p class=data1>Confirm Password</p></td>
-                <td><input type="password" placeholder="Enter Password" name="cpassword" required></td>
+                <td><input type="password" placeholder="Enter Password" name="cpassword" id="confirm_password" required></td>
                     </tr>
                 </table>
                     <table align=center>
@@ -77,9 +78,29 @@
             
             </center>
         
+        <script type="text/javascript">
+
+            var password = document.getElementById("password");
+             var confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword(){
+                 if(password.value != confirm_password.value) {
+                     confirm_password.setCustomValidity("Passwords Don't Match");
+                 } else {
+                     confirm_password.setCustomValidity('');
+                    }
+                    }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+            function validateuser(){
+
+            }
+        </script>
+         
         
-        
-        <?php
+        <!-- <?php
 			if(isset($_POST['register']))
 			{
 				$fname=$_POST['fname'];
@@ -139,7 +160,7 @@
 			}
 
 		?>
-        
+         -->
         
         
         

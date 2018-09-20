@@ -38,7 +38,17 @@
     
             
             <a href="bankdetails.php"><button type="button" class="databtn">Bank Details</button></a>
-            
+               <br>
+            <br>
+        <br>
+<br>
+<br>
+     <br>
+    
+            <a href="../index/index.php"><button type="button" class="databtn">Home</button></a>
+            <br>
+          
+           
             </center></div>
             
             

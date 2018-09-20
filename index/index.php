@@ -22,16 +22,11 @@
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<!-- Responsive navbar -->
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-				</a>
-					<h1 class="brand"><a href="#">Fuel Station Management System</a></h1>
-					<!-- navigation -->
-					<nav class="pull-right nav-collapse collapse">
-						<ul id="menu-main" class="nav">
-							<li><a href="../login/login.php">Login</a></li>
-						</ul>
-					</nav>
+					<table> <tr>
+                 <td><img src="../img/fuel.gif" style="float:left;width:102px; height:50px; margin-bottom: -5px; background: #fff;"></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td align=center><h1 class="brand"><a href="#">FUEL STATION MANAGEMENT SYSTEM</a></h1></td> 
+             </tr>   
+            </table>
 				</div>
 			</div>
 		</div>
@@ -85,25 +80,25 @@
 			<div class="row">
 				<div class="span3 animated-fast flyIn">
 					<div class="service-box">
-						<a href="../login/login.php"><img src="../img/img-1.jpg" alt="" /></a>
+						<a href="../login/loginOwner.php"><img src="../img/img-1.jpg" alt="" /></a>
 						<h2>Owner</h2>
 					</div>
 				</div>
 				<div class="span3 animated flyIn">
 					<div class="service-box">
-						<a href="../login/login.php"><img src="../img/img-2.jpg" alt="" /></a>
+						<a href="../login/loginDEO.php"><img src="../img/img-2.jpg" alt="" /></a>
 						<h2>Data Entry Operater</h2>
 					</div>
 				</div>
 				<div class="span3 animated-fast flyIn">
 					<div class="service-box">
-						<a href="../login/login.php"><img src="../img/img-3.jpg" alt="" /></a>
+						<a href="../login/loginManager.php"><img src="../img/img-3.jpg" alt="" /></a>
 						<h2>Manager</h2>
 					</div>
 				</div>
 				<div class="span3 animated-slow flyIn">
 					<div class="service-box">
-						<a href="../login/login.php"><img src="../img/img-4.jpg" alt="" /></a>
+						<a href="../login/loginCashier.php"><img src="../img/img-4.jpg" alt="" /></a>
 						<h2>Cashier</h2>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Cashier Signup</title>
+		<title>Manager Signup</title>
 	</head>
 	<body>
 		 
@@ -24,7 +24,7 @@
 			
 
 
-			$sql="INSERT INTO Cashier(NIC,FirstName,LastName,TelephoneNo,Address,UserName,Password) VALUES ('$NIC','$Fname','$Lname','$Telephone','$Address','$Username','$Password')";
+			$sql="INSERT INTO Manager(NIC,FirstName,LastName,TelephoneNo,Address,UserName,Password) VALUES ('$NIC','$Fname','$Lname','$Telephone','$Address','$Username','$Password')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
