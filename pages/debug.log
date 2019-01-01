@@ -1,0 +1,2 @@
+[1105/142714.038:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Access is denied. (0x5)
+[1108/170953.784:ERROR:crash_report_database_win.cc(428)] unexpected header
