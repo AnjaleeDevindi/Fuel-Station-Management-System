@@ -16,7 +16,7 @@ function dbConnect(){
 		die("Connection Failed." . $conn->connect_error);
 	}
 	else{
-	echo "Successfully Connected to the database server.";
+	//echo "Successfully Connected to the database server.";
 	}
 
 	return $conn;

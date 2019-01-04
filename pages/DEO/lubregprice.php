@@ -63,20 +63,43 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="lubreg-insert.php" method="post">
-    <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .."><br>
+  <form width=70% action="lubregprice-insert.php" method="post">
 
-    <label for="ftype">Lubricant Type</label><br>
+    <label for="uprice">Lubricant ID</label><br>
+ <select name="lubid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT LubricantId from Lubricant";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['LubricantId'];
+    echo "<option value='$n'>".$row['LubricantId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+    <!-- <label for="fid">Lubricant ID</label><br>
+    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .."><br> -->
+
+   <!--  <label for="ftype">Lubricant Type</label><br>
     <input type="text" id="ltype" name="ltype" placeholder="Enter Lubricant Type .."><br>
+ -->
 
-
-   <!--  <label for="uprice">Unit Price</label><br>
+    <label for="uprice">Unit Price</label><br>
     <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.."><br>
 
      <label for="uprice">Unit Priced Date</label><br>
     <input type="text" id="update" name="update" placeholder="Enter Unit Priced Data..">
- -->
+
   <center>
     <input type="submit" value="Submit"></center>
   </form>

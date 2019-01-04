@@ -45,7 +45,7 @@
                         <form role="form" action="validate.php" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" minlength="10" maxlength="10" placeholder="NIC" name="nic" type="text" autofocus>
+                                    <input class="form-control" placeholder="NIC" name="nic" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Fuel Register</title>
+		<title>Fuel Price Register</title>
 	</head>
 	<body>
 		 
@@ -15,18 +15,18 @@
 			$conn = dbConnect();
 			
 			$FuelId=$_POST['fuelid'];
-			$FuelType=$_POST['fueltype'];
-			// $UnitPrice=$_POST['unitprice'];
-			// $UpDate=$_POST['unitpriceddate'];
+			
+			$UnitPrice=$_POST['unitprice'];
+			$UpDate=$_POST['unitpriceddate'];
 			
 
 
-			$sql="INSERT INTO Fuel(FuelId,FuelName) VALUES ('$FuelId','$FuelType')";
+			$sql="INSERT INTO FuelPrice(FuelId,UnitPrice,UnitPricedDate) VALUES ('$FuelId','$UnitPrice','$UpDate')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='fuelregdeo.php'</script>";
+    			window.location='fuelpricereg.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;

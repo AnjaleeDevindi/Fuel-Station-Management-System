@@ -70,16 +70,9 @@
      <label for="fid">Pumper ID</label><br>
     <input type="text" id="pumperid" name="pumperid" placeholder="Enter pumper ID.."><br>
 
-    <label for="fid">Fuel ID</label><br>
-    <input type="text" id="fuelid" name="fuelid" placeholder="Enter fuel ID.."><br>
-
    <!--  <label for="ftype">Opening Meter Reading</label><br>
     <input type="text" id="lname" name="lastname" placeholder="Enter Opening Meter Readings.."><br>
  -->
-
-    <label for="fid">Opening Meater Readings</label><br>
-    <input type="text" id="openingreading" name="openingreading" placeholder="Enter opening Meter Readings.."><br> 
-
      <label for="fid">Closing Meater Readings</label><br>
     <input type="text" id="cmreading" name="cmreading" placeholder="Enter closing Meter Readings.."><br>
 

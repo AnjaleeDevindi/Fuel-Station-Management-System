@@ -70,11 +70,11 @@
     <input type="text" id="ftype" name="fueltype" placeholder="Enter Fuel Type.."><br>
 
 
-    <label for="uprice">Unit Price</label><br>
+   <!--  <label for="uprice">Unit Price</label><br>
     <input type="text" id="uprice" name="unitprice" placeholder="Enter Unit Price.."><br>
 
      <label for="uprice">Unit Priced Date</label><br>
-    <input type="date" id="update" name="unitpriceddate" placeholder="Enter Unit Priced Date.."><br>
+    <input type="date" id="update" name="unitpriceddate" placeholder="Enter Unit Priced Date.."><br> -->
 
     
   <center>
@@ -120,7 +120,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+   <!--  <?php include 'footer.php' ?> -->
 
 </body>
 

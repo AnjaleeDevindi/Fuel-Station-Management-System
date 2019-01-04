@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Fuel Register</title>
+		<title>Register Lubricant Price</title>
 	</head>
 	<body>
 		 
@@ -14,19 +14,19 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$FuelId=$_POST['fuelid'];
-			$FuelType=$_POST['fueltype'];
-			// $UnitPrice=$_POST['unitprice'];
-			// $UpDate=$_POST['unitpriceddate'];
+			$LubId=$_POST['lubid'];
+			
+			$UnitPrice=$_POST['uprice'];
+			$UpDate=$_POST['update'];
 			
 
 
-			$sql="INSERT INTO Fuel(FuelId,FuelName) VALUES ('$FuelId','$FuelType')";
+			$sql="INSERT INTO LubricantPrice(LubricantId,UnitPrice,UnitPricedDate) VALUES ('$FuelId','$UnitPrice','$UpDate')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='fuelregdeo.php'</script>";
+    			window.location='lubregprice.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;

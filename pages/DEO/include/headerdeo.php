@@ -138,8 +138,14 @@
                                 <li>
                                     <a href="fuelregdeo.php">Fuel</a>
                                 </li>
+                                 <li>
+                                    <a href="fuelpricereg.php">Fuel Price</a>
+                                </li>
                                 <li>
                                     <a href="lubregdeo.php">Lubricant</a>
+                                </li>
+                                 <li>
+                                    <a href="lubregprice.php">Lubricant Price</a>
                                 </li>
                                 <li>
                                     <a href="pumperregdeo.php">pumper</a>

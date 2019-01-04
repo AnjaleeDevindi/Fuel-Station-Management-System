@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lubricant Register</title>
+    <title>Fuel Station Mamagement System</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="footer.css" rel="stylesheet">
+     <link href="../footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -45,8 +45,7 @@
 
     <div id="wrapper">
 
-        
-
+       
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -59,24 +58,74 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            lubricant Register
+                            Fuel Price Register
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="lubreg-insert.php" method="post">
-    <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .."><br>
-
-    <label for="ftype">Lubricant Type</label><br>
-    <input type="text" id="ltype" name="ltype" placeholder="Enter Lubricant Type .."><br>
+  <form width=70% action="fuelpricereg-insert.php" method="post">
 
 
-   <!--  <label for="uprice">Unit Price</label><br>
-    <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.."><br>
+ <label for="uprice">Fuel ID</label><br>
+ <select name="fuelid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT FuelId from Fuel";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['FuelId'];
+    echo "<option value='$n'>".$row['FuelId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+
+    <label for="uprice">Unit Price</label><br>
+    <input type="text" id="uprice" name="unitprice" placeholder="Enter Unit Price.."><br>
 
      <label for="uprice">Unit Priced Date</label><br>
-    <input type="text" id="update" name="update" placeholder="Enter Unit Priced Data..">
+    <input type="date" id="update" name="unitpriceddate" placeholder="Enter Unit Priced Date.."><br> 
+
+  
+    <!--   <label for="fid">Fuel ID </label><br>
+      <select name="fuelid">
+        <?php
+
+          
+          $count = 0 ;
+          $conn = dbConnect();
+
+          $sql = "SELECT FuelId from Fuel";
+
+          $result = $conn->query($sql);
+
+          if($result-> num_rows > 0){
+            while ( $row = $result->fetch_assoc()) {
+            $n = $row['name'];
+              echo "<option value='$n'>".$row['name']."</option>";
+              
+              $count++;
+            }
+          }
+
+
+          ?>
+      </select><br>
+  <label for="uprice">Unit Price</label><br>
+    <input type="text" id="uprice" name="unitprice" placeholder="Enter Unit Price.."><br>
+
+     <label for="uprice">Unit Priced Date</label><br>
+    <input type="date" id="update" name="unitpriceddate" placeholder="Enter Unit Priced Date.."><br> 
  -->
+    
   <center>
     <input type="submit" value="Submit"></center>
   </form>
@@ -120,7 +169,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-   <!--  <?php include 'footer.php' ?>
+    <!-- <?php include 'footer.php' ?>
  -->
 </body>
 
