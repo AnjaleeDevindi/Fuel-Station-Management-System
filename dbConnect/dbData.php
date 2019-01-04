@@ -2,9 +2,9 @@
 
 <?php
 
-$serverName = "localhost";
+$serverName = "localhost:3307";
 $username = "root";
 $password = "";
-$dbName = "Project_New";
+$dbName = "project_new";
 
 ?>
