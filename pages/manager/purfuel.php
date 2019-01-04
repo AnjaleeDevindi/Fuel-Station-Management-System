@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff Register</title>
+    <title>Purchase_Fuel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -61,34 +61,31 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="Date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
     
        <label for="fid">Fuel  ID</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Fuel ID.."><br>
+    <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Fuel ID.." required><br>
     
        <label for="fid">Fuel Name</label><br>
     <input type="text" id="fname" name="firstname" placeholder="Enter Fuel Name.."><br>
       
        <label for="fid">Amount(liters)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).."><br>
-
-      
-       <label for="fid">Amount(liters)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).." required><br>
 
        <label for="fid">Amount(Rs)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(Rs).."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(Rs).." required><br>
         
        <label for="fid">Paid method</label><br>
-           <select>
+       <input type="radio" name="......" value="Cash"> Cash<br>
+       <input type="radio" name="......" value="Cheque"> Cheque<br>
+       <input type="radio" name="......" value="Credit"> Credit<br>
+           <!-- <select>
              <option value="Cash">Cash</option>
              <option value="Cheque">Cheque</option>
              <option value="Credit">Credit</option>
-      </select>
-      
-          
-  <center>
-    <input type="submit" value="Submit"></center>
+      </select><br> -->
+      <center><input type="submit" value="Submit"></center>
+
   </form>
 </div>
 

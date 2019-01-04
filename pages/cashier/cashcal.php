@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Daily Cash from shift</title>
+    <title>Daily_Cash_From_Shift</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -81,14 +81,14 @@
                             
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="Date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
 
-    <label for="ftype">Amount to be received</label><br>
-    <input type="text" id="lname" name="lastname" placeholder=" "><br>
+    <label for="ftype">Amount To Be Received</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter the amount of cash to be received.." required><br>
 
 
-    <label for="uprice">cash received</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter cash receeived.."><br>
+    <label for="uprice">Cash received</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter cash received.." required><br>
 
     
   <center>

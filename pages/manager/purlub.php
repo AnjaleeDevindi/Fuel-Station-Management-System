@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff Register</title>
+    <title>Purchase_Lubricant</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -63,30 +63,31 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
       
        <label for="fid">Lubricant  ID</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Lubricant ID.."><br>
+    <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant ID.." required><br>
     
        <label for="fid">Lubricant Name</label><br>
     <input type="text" id="fname" name="firstname" placeholder="Enter Lubricant Name.."><br>
       
        <label for="fid">Amount(liters)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).." required><br>
 
        <label for="fid">Amount(Rs)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amout(Rs).."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Amout(Rs).." required><br>
         
        <label for="fid">Paid method</label><br>
-           <select>
+       <input type="radio" name="......" value="Cash" required=""> Cash<br>
+       <input type="radio" name="......" value="Cheque"> Cheque<br>
+       <input type="radio" name="......" value="Credit"> Credit<br>
+           <!-- <select>
              <option value="Cash">Cash</option>
              <option value="Cheque">Cheque</option>
              <option value="Credit">Credit</option>
-      </select>
-      
-          
+      </select><br> -->
+      <center><input type="submit" value="Submit"></center>
   <center>
-    <input type="submit" value="Submit"></center>
   </form>
 </div>
 

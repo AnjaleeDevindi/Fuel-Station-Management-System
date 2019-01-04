@@ -40,7 +40,8 @@
     		}
 
 
-			$sql="INSERT INTO FuelSale(PumpId,PumperId,CMReading,Stime,Etime,Date,DebtorSales,CreditCard,Shortages, 	TotalAmount) VALUES ('$PumpId','$PumperId','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales','$Short','$TotAmnt')";
+			$sql="INSERT INTO FuelSale(PumpId,PumperId,CMReading,Stime,Etime,Date,DebtorSales,CreditCard,Shortages, 	TotalAmount) VALUES ('$PumpId','$PumperId','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales
+			','$Short','$TotAmnt')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

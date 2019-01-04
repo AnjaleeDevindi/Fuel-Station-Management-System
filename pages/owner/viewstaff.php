@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>View_Staff</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -62,8 +62,8 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
    
-       <label for="fid">Employee NIC</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Lubricant Name.."><br>
+       <label for="fid">Employee ID</label><br>
+    <input type="date" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
       
           
   <center>

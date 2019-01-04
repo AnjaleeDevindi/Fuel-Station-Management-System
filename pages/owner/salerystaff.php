@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>Staff_Salary_Report</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -62,12 +62,12 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
    
-      <label for="fid">Employee NIC</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Employee NIC.."><br>
+      <label for="fid">Employee ID</label><br>
+    <input type="text" minlength="06" maxlength="10" id="fname" name="firstname" placeholder="Enter Employee ID.." required><br>
       
       
        <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
       
           
   <center>

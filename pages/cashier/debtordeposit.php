@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dabtor Deposit Details</title>
+    <title>Dabtor_Deposit_Details</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -61,14 +61,14 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="Date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
 
     <label for="ftype">Debtor ID</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Debtor ID .."><br>
+    <input type="text" minlength="6" = maxlength="10" ="10" id="lname" name="lastname" placeholder="Enter Debtor ID .." required><br>
 
 
     <label for="uprice">Amount Received</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter amount received from debtor.."><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter amount received from debtor.." required><br>
 
     
   <center>

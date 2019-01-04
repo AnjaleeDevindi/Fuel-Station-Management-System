@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bank Deposit Details</title>
+    <title>Bank_Deposit_Details</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -64,14 +64,14 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Date .."><br>
+    <input type="Date" id="fname" name="firstname" placeholder="Enter Date .." required><br>
 
     <label for="ftype">Amount</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter amount .."><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter Amount .." required><br>
 
 
     <label for="uprice">Bank</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.."><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.." required><br>
 
     
   <center>

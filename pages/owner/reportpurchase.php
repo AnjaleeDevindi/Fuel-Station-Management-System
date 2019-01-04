@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>Purchase_Report</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -56,14 +56,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Report For Purchase
+                            Report For Purchases
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
    
        <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
       
           
   <center>

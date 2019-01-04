@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff Register</title>
+    <title>Delete_Staff_Member</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -67,8 +67,8 @@
                         <!-- /.panel-heading -->
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
-    <label for="fid">Employee NIC No</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter NIC No of Employee.."><br>
+    <label for="fid">Employee ID</label><br>
+    <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter ID of Employee.." required><br>
 
   <center>
     <input type="submit" value="Submit"></center>

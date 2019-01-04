@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>purchase-owner</title>
+    <title>Stock_Report</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -64,7 +64,7 @@
   <form width=70% action="/action_page.php">
    
        <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Lubricant Name.."><br>
+    <input type="date" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
       
           
   <center>

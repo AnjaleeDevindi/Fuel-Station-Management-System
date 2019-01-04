@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff Register</title>
+    <title>Purcahse_Other</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -63,22 +63,20 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
+    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
       
        
        <label for="fid">Purchase Item</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Lubricant Name.."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
       
 
        <label for="fid">Amount(Rs)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amout(Rs).."><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Amout(Rs).." required><br>
         
-       <label for="fid">Paid method</label><br>
-           <select>
-             <option value="Cash">Cash</option>
-             <option value="Cheque">Cheque</option>
-             <option value="Credit">Credit</option>
-      </select>
+        <label for="fid">Paid method</label><br>
+       <input type="radio" name="......" value="Cash" required> Cash<br>
+       <input type="radio" name="......" value="Cheque"> Cheque<br>
+       <input type="radio" name="......" value="Credit"> Credit<br>
       
           
   <center>
