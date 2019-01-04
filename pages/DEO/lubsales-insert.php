@@ -18,10 +18,22 @@
 			$Date=$_POST['date'];
 			$Time=$_POST['time'];
 			$NOIe=$_POST['noi'];
-			
+			$TotAmnt = 0;
+			echo "$Date";
 
+			$sql = "SELECT UnitPrice FROM lubricantprice WHERE (LubricantId = '$LubId' AND UnitPricedDate = '$Date') ";
+			$result = $conn->query($sql);
 
-			$sql="INSERT INTO Lubricantsale(LubricantId,Date,Time,NoOfItems) VALUES ('$LubId','$Date','$Time','$NOI')";
+			if ($result->num_rows > 0) {
+
+    			// output data of each row
+    			while($row = $result->fetch_assoc()) {
+    				$Price = $row["UnitPrice"];
+    				echo "$Price";
+        			$TotAmnt = $row["UnitPrice"] * $NOIe;
+    			}
+
+    			$sql="INSERT INTO Lubricantsale(LubricantId,Date,Time,NoOfItems,TotalAmount) VALUES ('$LubId','$Date','$Time','$NOIe','$TotAmnt')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
@@ -31,6 +43,12 @@
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
+    		} else {
+    			echo "Error: " . $sql . "<br>" . $conn->error;
+    		}
+
+
+			
 				$conn -> close();
 
 		}
