@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Register_Staff</title>
+    <title>Staff Register</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -22,9 +22,6 @@
 
     <!-- Morris Charts CSS -->
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../../vendor/metisMenu/password.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
      <link href="footer.css" rel="stylesheet">
@@ -66,29 +63,26 @@
   <form width=70% action="regstaffman-insert.php" method="post">
     
      <label for="ftype">NIC</label><br>
-    <input type="text" minlength="10" maxlength="10" id="nic" name="NIC" placeholder="Enter NIC Number.." required><br>
-
-    <label for="ftype">Employee ID</label><br>
-    <input type="text" minlength="06" maxlength="10" id="nic" name="NIC" placeholder="Enter NIC Number.." required><br>
+    <input type="text" id="nic" name="NIC" placeholder="Enter NIC Number.."><br>
 
     <label for="fid">First Name</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter First name.." required><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter First name.."><br>
 
      <label for="fid">Last Name</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Last name.." required><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter Last name.."><br>
 
    <label for="uprice">Contact Number</label><br>
-    <input type="text" minlength="10" maxlength="10" id="cno" name="contactnumber" placeholder="Enter Contact Number.."><br>
+    <input type="text" id="cno" name="contactnumber" placeholder="Enter Contact Number.."><br>
       
 
      <label for="fid">Address</label><br>
-    <input type="text" id="address" name="address" placeholder="Enter Address.." required><br>
+    <input type="text" id="address" name="address" placeholder="Enter Address.."><br>
 
      <label for="uprice">Date Of Birth</label><br>
-    <input type="date" id="dob" name="dob" placeholder="Enter Birth Date.." required><br>
+    <input type="date" id="dob" name="dob" placeholder="Enter Birth Date.."><br>
     
     <label for="uprice">Email</label><br>
-    <input type="email" size="83" id="email" name="email" placeholder="Enter Email.."><br><br>
+    <input type="email" id="email" name="email" placeholder="Enter Email.."><br>
 
     <label for="staff">Register As:</label><br>
 
@@ -97,104 +91,22 @@
         <option value="Manager">Manager</option>
         <option value="Cashier">Cashier</option>
         <option value="Owner">Owner</option>
-      </select><br><br>
-
+      </select>
+      
+    <label for="uprice">Username</label><br>
+    <input type="text" id="uname" name="username" placeholder="Enter username.."><br>
+      
      <label for="uprice">Password</label><br>
-    <input type="password" size="83" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter password.." required><br><br>
+    <input type="password" id="password" name="password" placeholder="Enter passwrd.."><br>
       
     <label for="uprice">Confirm Password</label><br>
-    <input type="password" size="83" id="psw1" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  placeholder="Enter password.." required><br><br>  
-  <center>
+    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password.."><br>
 
+
+    
+  <center>
     <input type="submit" value="Submit"></center>
   </form>
-
-  
-
-    <div id="message">
-  <h3>Password must contain the following:</h3>
-  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-  <p id="number" class="invalid">A <b>number</b></p>
-  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-</div>
-                
-<script>
-    // pw Character validation
-var myInput = document.getElementById("psw");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
-
-// When the user clicks on the password field, show the message box
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
-}
-
-// When the user clicks outside of the password field, hide the message box
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
-}
-
-// When the user starts to type something inside the password field
-myInput.onkeyup = function() {
-  // Validate lowercase letters
-  var lowerCaseLetters = /[a-z]/g;
-  if(myInput.value.match(lowerCaseLetters)) {  
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
-  } else {
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
-  }
-  
-  // Validate capital letters
-  var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {  
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
-  } else {
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
-  }
-
-  // Validate numbers
-  var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {  
-    number.classList.remove("invalid");
-    number.classList.add("valid");
-  } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
-  }
-  
-  // Validate length
-  if(myInput.value.length >= 8) {
-    length.classList.remove("invalid");
-    length.classList.add("valid");
-  } else {
-    length.classList.remove("valid");
-    length.classList.add("invalid");
-  }
-}
-
-// confirm pw validation
-function validateform() {
-        var x= document.getElementById('psw').value;
-        var y = document.getElementById('psw1').value;
-        if(x != y){
-            alert("Paswords does not match");
-            return false;
-        }else{
-            return true;
-        }
-
-    }
-</script>
-
-
-
 </div>
 
                         <!-- /.panel-body -->
