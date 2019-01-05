@@ -7,57 +7,39 @@
 	</style>
 </head>
 	<body>
+        <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-		<?php
+                include "../../dbConnect/dbConnect.php";
+                $conn = dbConnect();
 
-			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+               $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper ";
+                $result = $conn->query($sql);
+                
 
-			include "../../dbConnect/dbConnect.php";
-			$conn = dbConnect();
+                // echo "<table><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>";
 
-echo"<center><b>Details of Pumpers</b></center>"
+                if ($result->num_rows > 0) {
+                    $_POST['data_rows'] = $result;
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $EmpId = $row["EmpId"];
+                    echo "$EmpId";
+                     $data =  $row["EmpId"];
+                    echo "<script>
+                window.location='viewstaff.php'
+                </script>";
 
-$sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    echo "<table><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 results";
-}
-
-
-
-
-
-echo"<center><b>Details of Other Employees</b></center>"
-
-$sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM employee";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    echo "<table><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
-    }
-    echo "</table>";
-} else {
-    echo "0 results";
-}
+                    // echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
+                }
+                // echo "</table>";
+            }
 
 
+            }
 
+        ?>
 
-
-
-$conn->close();
-?> 
 
 </body>
 </html>

@@ -17,6 +17,9 @@
     <!-- MetisMenu CSS -->
     <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+     <!-- MetisMenu CSS -->
+    <link href="../../vendor/metisMenu/table.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -60,11 +63,15 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+
+
+
+
+  <form width=70% action="viewstaff.php" method="post">
    
        <label for="fid">Employee ID</label><br>
 
-       <select name="empid">
+       <select name="empid" id="empid">
     <?php
 
     include "../../dbConnect/dbConnect.php";
@@ -95,16 +102,145 @@
     $count++;
 }
 }
+$conn -> close();
 ?>
 <option>All</option>
 </select><br>
 
-   <!--  <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
+  <!--   <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
        -->
           
-  <center>
-    <input type="submit" value="Submit"></center>
+  <br><br><center>
+    <input type="submit" value="Submit"></center><br><br>
+
+ <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                 $conn = dbConnect();
+                $EmpId = $_POST['empid'];
+        
+
+                if (isset($EmpId)) {
+
+                
+                if ($EmpId == 'All') {
+                    $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper ";
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
+                }
+                echo "</table><br><br>";
+
+
+
+                 $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, Email, Type, BasicSalary, Allowances FROM employee ";
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["Email"]. "</td><td>" . $row["Type"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td></tr>";
+                }
+                echo "</table>";
+            }
+            }
+                } else {
+                    $Tag = substr( $EmpId, 0, 3 );
+                   
+
+                    if (substr( $EmpId, 0, 4 ) === "PUMP") {
+                        
+                        $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, BasicSalary, Allowances, OTRate FROM pumper WHERE EmpId = '$EmpId'";
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>NIC</th><th>PumperId</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>BasicSalary</th><th>Allowances</th><th>OTRate</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td><td>" . $row["OTRate"]. "</td></tr>";
+                }
+            
+                echo "</table>";
+            }
+
+                    } else if ($Tag === "EMP") {
+                        
+
+                        $sql = "SELECT NIC, EmpId, FirstName, LastName, DOB, Address, TelephoneNo, Email, Type, BasicSalary, Allowances FROM employee WHERE EmpId = '$EmpId' ";
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>NIC</th><th>Employee Id</th><th>Name</th><th>DOB</th><th>Address</th><th>TelephoneNo</th><th>Email</th><th>Emp Type</th><th>BasicSalary</th><th>Allowances</th></tr>';
+                
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["NIC"]. "</td><td>" . $row["EmpId"]. "</td><td>" . $row["FirstName"]. " " . $row["LastName"]. "</td><td>" . $row["DOB"]. "</td><td>" . $row["Address"]. "</td><td>" . $row["TelephoneNo"]. "</td><td>" . $row["Email"]. "</td><td>" . $row["Type"]. "</td><td>" . $row["BasicSalary"]. "</td><td>" . $row["Allowances"]. "</td></tr>";
+                }
+                echo "</table>";
+
+                    }
+
+                    
+
+                
+            }
+            }
+            
+
+                }
+
+                $conn -> close();
+
+              
+                
+
+               
+        
+
+
+            }
+
+        ?>   
+
   </form>
+
+
+  
 </div>
 
                         <!-- /.panel-body -->
@@ -150,49 +286,5 @@
 
 </html>
 
-<?php
 
-            $conn = mysqli_connect ("localhost", "root", "", "group") or die ("cannot connect");
-
-			if (null !==(filter_input(INPUT_POST, 'sub'))){
-
-					$uname=mysqli_real_escape_string($conn,filter_input(INPUT_POST, 'uname'));
-
-					$sql = "SELECT First Name,Last Name,NIC,Address,Contact Number,Date Of Birth,Username,Password FROM Customer WHERE username='$uname';";
-
-					$result=mysqli_query($conn,$sql);
-
-					$queryResult=mysqli_num_rows($result);
-
-					if ($queryResult > 0){
-
-						echo "<p style=\"font-size:18px;text-align:center\">Employee is available</p>";
-						echo "<div class=\"view\">";
-						echo "<table border=1 style=\"width:50%\">";
-						echo "<tr><th>Username</th><th>First Name</th><th>Last Name</th><th>NIC</th><th>Email</th><th>Address</th><th>Contact Number</th><th>Date Of Birth</th><th>Username</th><th>Password</th></tr>";
-
-						while ($row=mysqli_fetch_assoc($result)){
-
-							$uname = $row['username'];
-							$cus_id=$row['customer_id'];
-							$cus_name=$row['customer_name'];
-							$contact_number = $row['contact_number'];
-							$email = $row['email'];
-							$nic = $row['nic'];
-							$password=$row['password'];
-							echo "<tr><td>".$uname."</td><td>".$cus_id."</td><td>".$cus_name."</td><td>".$contact_number."</td><td>".$email."</td><td>".$nic."</td><td>".$password."</td></tr>";    
-							}
-						    echo "</table>";
-						    echo "</div>";
-
-					}else {
-
-						echo "<p style=\"text-align:center\">Employee is not available</p>";
-					}
-				}
-
-
-
-			
-		?>
 
