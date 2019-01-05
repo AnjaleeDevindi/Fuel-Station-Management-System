@@ -63,8 +63,44 @@
   <form width=70% action="/action_page.php">
    
        <label for="fid">Employee ID</label><br>
-    <input type="date" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
-      
+
+       <select name="empid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT EmpId from Employee ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+     $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+?>
+<option>All</option>
+</select><br>
+
+   <!--  <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant Name.." required><br>
+       -->
           
   <center>
     <input type="submit" value="Submit"></center>

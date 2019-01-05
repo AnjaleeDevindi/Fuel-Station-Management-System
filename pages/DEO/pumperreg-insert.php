@@ -15,7 +15,7 @@
 			$conn = dbConnect();
 			
 			$NIC=$_POST['nic'];
-			$PumperId=$_POST['pumperid'];
+			$EmpId=$_POST['empid'];
 			$FirstName=$_POST['firstname'];
 			$LastName=$_POST['lastname'];
 			$DOB=$_POST['dob'];
@@ -23,9 +23,11 @@
 			$cno=$_POST['cno'];
 			$Basicsalary=$_POST['basicsalary'];
 			$Allowances=$_POST['allowances'];
+			$OTRate=$_POST['otrate'];
+
 			
 
-			$sql="INSERT INTO Pumper(NIC,PumperId,FirstName,LastName,DOB,Address,TelephoneNo,BasicSalary,Allowances) VALUES ('$NIC','$PumperId,'$FirstName','$LastName','$DOB','$Address','$cno','$Basicsalary','Allowances')";
+			$sql="INSERT INTO pumper(NIC,EmpId,FirstName,LastName,DOB,Address,TelephoneNo,BasicSalary,Allowances,OTRate) VALUES ('$NIC','$EmpId','$FirstName','$LastName','$DOB','$Address','$cno','$Basicsalary','$Allowances','$OTRate')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

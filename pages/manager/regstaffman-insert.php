@@ -15,19 +15,20 @@
 			$conn = dbConnect();
 			
 			$NIC=$_POST['NIC'];
+			$EmpId=$_POST['empid'];
 			$fname=$_POST['firstname'];
 			$lname=$_POST['lastname'];
-			$cno=$_POST['contactnumber'];
+			$cno=$_POST['cno'];
 			$address=$_POST['address'];
 			$dob=$_POST['dob'];
 			$email=$_POST['email'];
 			$type=$_POST['type'];
-			$uname=$_POST['username'];
+			
 			$password=$_POST['password'];
 			
 
 
-			$sql="INSERT INTO Employee(NIC,FirstName,LastName,Telephone,Address,DOB,Email,Type,Username,Password) VALUES ('$NIC','$fname','$lname','$cno','$address','$dob','$email','$type','$uname','$password')";
+			$sql="INSERT INTO Employee(NIC,EmpId,FirstName,LastName,TelephoneNo,Address,DOB,Email,Type,Password) VALUES ('$NIC','$EmpId','$fname','$lname','$cno','$address','$dob','$email','$type','$password')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
