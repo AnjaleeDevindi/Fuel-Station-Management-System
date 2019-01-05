@@ -60,10 +60,11 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="reportpurchase-insert.php" method="post">
    
-       <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
+       <label for="fid">Date Range</label><br>
+    From:- <input type="date" id="fname" name="firstname" placeholder="Enter Date from.." required><br>
+    To:-   <input type="date" id="fname" name="firstname" placeholder="Enter Date to.." required><br>
       
           
   <center>

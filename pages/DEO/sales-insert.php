@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register Pumper</title>
+		<title>Fuel_Sales</title>
 	</head>
 	<body>
 		 
