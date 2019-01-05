@@ -55,7 +55,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                         DebtorDeposit
+                         Debtor Deposit
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>

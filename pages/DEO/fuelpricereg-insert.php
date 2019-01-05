@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Fuel Price Register</title>
+		<title>Fuel_Price_Register</title>
 	</head>
 	<body>
 		 

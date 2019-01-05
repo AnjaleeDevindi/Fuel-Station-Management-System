@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register Lubricant</title>
+		<title>Lubricant_Sales</title>
 	</head>
 	<body>
 		 

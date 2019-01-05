@@ -61,7 +61,8 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+
+  <form width=70% action="viewstaff-insert.php" method="post">
     <label for="fid">Employee NIC No</label><br>
     <input type="text" id="fname" name="firstname" placeholder="Enter NIC No of Employee.."><br>
 

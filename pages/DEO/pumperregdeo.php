@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pumper register</title>
+    <title>Pumper_Register</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -68,8 +68,8 @@
      <label for="ftype">NIC</label><br>
     <input type="text" id="nic" name="nic" placeholder="Enter NIC Number.."><br>
 
-     <label for="fid">Pumper ID</label><br>
-    <input type="text" id="pumperid" name="pumperid" placeholder="Enter First name.."><br>
+     <label for="fid">Employee ID</label><br>
+    <input type="text" id="empid" name="empid" placeholder="Enter First name.."><br>
 
 
     <label for="fid">First Name</label><br>
@@ -93,6 +93,9 @@
 
      <label for="uprice">Allowances</label><br>
     <input type="text" id="allowances" name="allowances" placeholder="Enter Allowances.."><br>
+
+    <label for="uprice">OT Rate</label><br>
+    <input type="text" id="otrate" name="otrate" placeholder="Enter OT Rate.."><br>
 
 
     
