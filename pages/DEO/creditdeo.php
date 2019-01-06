@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Credit Card Sales</title>
+    <title>Credit_Card_Sales</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">

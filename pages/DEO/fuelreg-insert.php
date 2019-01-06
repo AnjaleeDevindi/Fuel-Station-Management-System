@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Fuel Register</title>
+		<title>Register_Fuel</title>
 	</head>
 	<body>
 		 

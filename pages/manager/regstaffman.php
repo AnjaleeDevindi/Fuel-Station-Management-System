@@ -17,6 +17,9 @@
     <!-- MetisMenu CSS -->
     <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- MetisMenu CSS -->
+    <link href="../../vendor/metisMenu/password.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -69,7 +72,7 @@
     <input type="text" minlength="10" maxlength="10" id="nic" name="NIC" placeholder="Enter NIC Number.." required><br>
 
     <label for="ftype">Employee ID</label><br>
-    <input type="text" minlength="06" maxlength="10" id="nic" name="NIC" placeholder="Enter NIC Number.." required><br>
+    <input type="text" minlength="06" maxlength="10" id="empid" name="empid" placeholder="Enter Employee ID.." required><br>
 
     <label for="fid">First Name</label><br>
     <input type="text" id="fname" name="firstname" placeholder="Enter First name.." required><br>
@@ -78,17 +81,16 @@
     <input type="text" id="lname" name="lastname" placeholder="Enter Last name.." required><br>
 
    <label for="uprice">Contact Number</label><br>
-    <input type="text" minlength="10" maxlength="10" id="cno" name="contactnumber" placeholder="Enter Contact Number.."><br>
+    <input type="text" minlength="10" maxlength="10" id="cno" name="cno" placeholder="Enter Contact Number.."><br>
       
-
      <label for="fid">Address</label><br>
     <input type="text" id="address" name="address" placeholder="Enter Address.." required><br>
 
      <label for="uprice">Date Of Birth</label><br>
     <input type="date" id="dob" name="dob" placeholder="Enter Birth Date.." required><br>
     
-    <label for="uprice">Email</label><br>
-    <input type="email" size="83" id="email" name="email" placeholder="Enter Email.."><br><br>
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" size="83" placeholder="Enter Email.."><br><br> 
 
     <label for="staff">Register As:</label><br>
 

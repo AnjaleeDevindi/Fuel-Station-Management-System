@@ -17,6 +17,9 @@
     <!-- MetisMenu CSS -->
     <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- MetisMenu CSS -->
+    <link href="../../vendor/metisMenu/password.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -86,8 +89,8 @@
      <label for="uprice">Date Of Birth</label><br>
     <input type="date" id="dob" name="dob" placeholder="Enter Birth Date.." required><br>
     
-    <label for="uprice">Email</label><br>
-    <input type="email" size="83" id="email" name="email" placeholder="Enter Email.."><br><br>
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" pattern=".+@globex.com" size="83" placeholder="Enter Email.."><br><br>
 
     <label for="staff">Register As:</label><br>
 
@@ -99,10 +102,10 @@
       </select><br><br>
 
      <label for="uprice">Password</label><br>
-    <input type="password" size="83" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter password.." required><br><br>
+    <input type="password" size="83" id="psw" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter password.." required><br><br>
       
     <label for="uprice">Confirm Password</label><br>
-    <input type="password" size="83" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Enter password.." required><br><br>  
+    <input type="password" size="83" id="psw1" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  placeholder="Enter password.." required><br><br>  
   <center>
 
     <input type="submit" value="Submit"></center>

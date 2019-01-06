@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register Staff</title>
+		<title>Register_Debtors</title>
 	</head>
 	<body>
 		 
