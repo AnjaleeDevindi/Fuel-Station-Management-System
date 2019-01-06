@@ -16,10 +16,10 @@
 			
 			$LubId=$_POST['lubid'];
 			$LubType=$_POST['ltype'];
-			
+			$Amount=$_POST['amount'];
 
 
-			$sql="INSERT INTO Lubricant(LubricantId,LubricantName) VALUES ('$FuelId','$FuelType')";
+			$sql="INSERT INTO Lubricant(LubricantId,LubricantName,Amount) VALUES ('$LubId','$LubType','$Amount')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

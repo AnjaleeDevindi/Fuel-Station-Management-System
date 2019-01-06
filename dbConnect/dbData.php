@@ -5,6 +5,6 @@
 $serverName = "localhost";
 $username = "root";
 $password = "";
-$dbName = "Project_New";
+$dbName = "fuel_station";
 
 ?>
