@@ -1,8 +1,12 @@
 <html>
 	<head>
-		<title>Register_Pumper</title>
+		<title>Register_Fuel</title>
 	</head>
 	<body>
+
+
+
+		
 		 
 		<?php
 		
@@ -14,24 +18,19 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$NIC=$_POST['nic'];
-			$EmpId=$_POST['empid'];
-			$FirstName=$_POST['firstname'];
-			$LastName=$_POST['lastname'];
-			$DOB=$_POST['dob'];
-			$Address=$_POST['address'];
-			$cno=$_POST['cno'];
-			$Basicsalary=$_POST['basicsalary'];
-			$Allowances=$_POST['allowances'];
-			
+			$FuelId=$_POST['fuelid'];
+			$FuelType=$_POST['fueltype'];
+			// $UnitPrice=$_POST['unitprice'];
+			// $UpDate=$_POST['unitpriceddate'];
 			
 
-			$sql="INSERT INTO pumper(NIC,EmpId,FirstName,LastName,DOB,Address,TelephoneNo,BasicSalary,Allowances) VALUES ('$NIC','$EmpId','$FirstName','$LastName','$DOB','$Address','$cno','$Basicsalary','$Allowances')";
+
+			$sql="INSERT INTO Fuel(FuelId,FuelName) VALUES ('$FuelId','$FuelType')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='pumperregdeo.php'</script>";
+    			window.location='fuelregdeo.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;

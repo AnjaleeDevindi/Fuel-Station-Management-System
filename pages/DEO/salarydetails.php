@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff Register</title>
+    <title>Salary_Details</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -37,7 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <?php include 'include/headermanager.php'?>
+    <?php include 'include/headerdeo.php'?>
 
 </head>
 
@@ -46,9 +46,12 @@
     <div id="wrapper">
 
        
+
         <div id="page-wrapper">
             <div class="row">
-                
+                <div class="col-lg-12">
+                    <h1 class="page-header">Data entry Operator</h1>
+                </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
@@ -56,17 +59,61 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Salery Details
+                            Salary Details
+                        </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="salarydetails-insert.php" method=post>
+
     
-      <label for="fid">Employee NIC</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Employee NIC.."><br>
-    
+     <label for="fid">Employee ID</label><br>
+    <select name="empid" id="empid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT EmpId from Employee ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+     $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+$conn -> close();
+?>
+
+</select><br>
+
+
     <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
-      
+    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+
+     <label for="fid">In Time</label><br>
+    <input type="time" id="itime" name="itime" placeholder="Enter In Time.."><br>
+
+     <label for="uprice">Out Time</label><br>
+    <input type="time" id="otime" name="otime" placeholder="Enter Out Time.."><br>
+
+    
     
   <center>
     <input type="submit" value="Submit"></center>
@@ -111,8 +158,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
-
+   <!--  <?php include 'footer.php' ?>
+ -->
 </body>
 
 </html>

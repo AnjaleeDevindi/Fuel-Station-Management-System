@@ -64,14 +64,14 @@
                         <div class=panelbody>
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="Date" id="fname" name="firstname" placeholder="Enter Date .." required><br>
+    <input type="Date" id="date" name="date" placeholder="Enter Date .." required><br>
 
     <label for="ftype">Amount</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Amount .." required><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Amount .." required><br>
 
 
     <label for="uprice">Bank</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.." required><br>
+    <input type="text" id="bank" name="bank" placeholder="Enter Amount.." required><br>
 
     
   <center>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dabtor_Sales </title>
+    <title>Dabtor Fuel Sales </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -60,20 +60,92 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Debtor Sales
+                            Debtor Fuel Sale
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="debtorfuelsale-insert.php" method="post">
     <label for="fid">Debtor ID</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Debtor Id.."><br>
+   <select name="debtorid">
+    <?php
 
-    <label for="ftype">Fuel ID</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Fuel Id.."><br>
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT DebtorId from Debtor";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['DebtorId'];
+    echo "<option value='$n'>".$row['DebtorId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    <label for="fid">Fuel ID</label><br>
+   <select name="fuelid">
+    <?php
+
+    // include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT FuelId from Fuel";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['FuelId'];
+    echo "<option value='$n'>".$row['FuelId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    
+   
+    <label for="ftype">Pump ID</label><br>
+    <select name="pumpid">
+    <?php
+
+    // include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT PumpId from Pump";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['PumpId'];
+    echo "<option value='$n'>".$row['PumpId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+   
+
+    <label for="ftype">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+
+    <label for="ftype">Amount</label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Amount.."><br>
 
 
-    <label for="uprice">Amount</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.."><br>
+    <label for="uprice">Time</label><br>
+    <input type="time" id="time" name="time" placeholder="Enter Time.."><br>
 
     
   <center>

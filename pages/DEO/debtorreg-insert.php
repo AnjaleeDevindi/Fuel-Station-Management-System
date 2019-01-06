@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register_Debtors</title>
+		<title>Register Debtors</title>
 	</head>
 	<body>
 		 

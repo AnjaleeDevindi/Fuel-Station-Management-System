@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h2 class="navbar-brand" >Fuel Station Management System</h2>
+                <h2 class="navbar-brand">Fuel Station Management System</h2>
             </div>
             <!-- /.navbar-header -->
 
@@ -75,10 +75,6 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         
-                                               
-                        <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Calender</a>
-                        </li>
                         <li>
                             <a href="#"><i class="fa fa-edit fa-fw"></i> Contact Details</a>
                             
@@ -90,15 +86,6 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Stock Levels<span class="fa arrow"></span></a>
                             
                         </li>
-                            
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Issues <span class="fa arrow"></span></a>
-                        </li>
-            
-
-
-
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -112,33 +99,14 @@
             <div class="row">
                 <div class="col-lg-8">
                    <img src="index.jpg" height="500px" width="700px">
-            <b></b>
-                    <table>
-             
-                 
-            <tr><td><h3><b><center>Vision</center></b></h3></td></tr>
-                      
-                      
-            <tr>
-            <td><b><p style="background-color:rgb(248, 248, 248);"> Our vision is to become Srilanka’s leading private brand for gas station and convenience stores, with a network that consistently offers low fuel prices, fuel quality standards and a strong brand image.  </p></b></td>
-            </tr>
-            <tr><td><h3><b><center>Mission</center></b></h3></td></tr>         
-            <tr>
-            <td><b><p style="background-color:rgb(248, 248, 248);">FUEL is the reliable, Srilankas brand for fuel stations and convenience stores that offers the flexibility, attractive fuel prices, value-added programs, and strong brand identity that dealers and distributors need to succeed, while giving consumers quality fuel at low prices.</p></b></td>
-             </tr>
-                </table>
-            
-                      
-                    
-                    
                 </div>
                 <!-- /.col-lg-8 -->
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-bell fa-fw"></i> Notifications Panel
                         </div>
-                        <!-- /.panel-heading -->
+                        
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
@@ -152,11 +120,11 @@
 
                             </div>
                         </div>
-                        <!-- /.panel-body -->
+                        
                     </div>
-                    <!-- /.panel -->
                     
-                </div>
+                    
+                </div> -->
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->

@@ -89,12 +89,7 @@
 }
 ?>
 </select><br>
-    <!-- <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .."><br> -->
-
-   <!--  <label for="ftype">Lubricant Type</label><br>
-    <input type="text" id="ltype" name="ltype" placeholder="Enter Lubricant Type .."><br>
- -->
+   
 
     <label for="uprice">Unit Price</label><br>
     <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.." required><br>

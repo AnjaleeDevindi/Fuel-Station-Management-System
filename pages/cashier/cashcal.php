@@ -62,33 +62,17 @@
                         <!-- /.panel-heading -->
                         <div class=panelbody>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             
   <form width=70% action="/action_page.php">
     <label for="fid">Date</label><br>
-    <input type="Date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
+    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
 
     <label for="ftype">Amount To Be Received</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter the amount of cash to be received.." required><br>
+    <input type="text" id="amountto" name="amountto" placeholder="Enter the amount of cash to be received.." required><br>
 
 
     <label for="uprice">Cash received</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter cash received.." required><br>
+    <input type="text" id="cash" name="cash" placeholder="Enter cash received.." required><br>
 
     
   <center>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pump_Register</title>
+    <title>Pump Register</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -87,58 +87,9 @@
 }
 }
 ?>
-</select><br>
+</select><br><br><br>
 
-    <!--  <label for="fid">Fuel ID</label><br>
-
-    <select name="fuelid">
-        <?php
-
-        include"../../dbConnect/dbConnect.php";
-        $count=0;
-        $conn=dbConnect();
-
-        $sql="SELECT FuelId from Fuel";
-        $result=$conn->query($sql);
-
-        if($result->num_rows>0){
-            while($row=$result->fetch_assoc()){
-                $n=$row['FuelID'];
-                echo"<option value='$n'>".$row['FuelId']."</option>";
-
-                $count++;
-            }
-        }
-        ?>
-    </select><br>
- -->
-    <!--   <select name="fuelid">
-    <?php
-
-    include "../../dbConnect/dbConnect.php";
-    $count=0;
-    $conn=dbConnect();
-
-    $sql="SELECT FuelId from Fuel";
-
-    $result=$conn->query($sql);
-
-    if($result->num_rows>0){
-    while($row=$result->fetch_assoc()){
-    $n=$row['FuelId'];
-    echo "<option value='$n'>".$row['FuelId']."</option>";
-
-    $count++;
-}
-}
-?>
-</select><br> -->
-    <!-- <input type="text" id="fuelid" name="fuelid" placeholder="Enter Fuel ID.."><br>
-
-    -->
-    <!-- <input type="text" id="tankid" name="tankid" placeholder="Enter Tank ID.."><br>
- -->
-     
+   
 
 
     

@@ -129,6 +129,9 @@
                                 <li>
                                     <a href="lubsales.php">Lubricant sales</a>
                                 </li>
+                                <li>
+                                    <a href="debtorfuelsale.php">Debtor Fuel sales</a>
+                                </li>
                             </ul>
                         </li>
 
@@ -159,8 +162,17 @@
                                  <li>
                                     <a href="tankregdeo.php">Tank</a>
                                 </li>
+                               
                             </ul>
                             <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Other<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="salarydetails.php">Employee Salary Details</a>
+                                </li>
+                            </ul>
                         </li>
                        <!--  <li>
                             <a href="pumperleaves.html"><i class="fa fa-table fa-fw"></i> Pumper Leaves Details</a>

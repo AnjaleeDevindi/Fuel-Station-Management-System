@@ -94,8 +94,6 @@
      <label for="uprice">Allowances</label><br>
     <input type="text" id="allowances" name="allowances" placeholder="Enter Allowances.."><br>
 
-    <label for="uprice">OT Rate</label><br>
-    <input type="text" id="otrate" name="otrate" placeholder="Enter OT Rate.."><br>
 
 
     
@@ -142,8 +140,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
-
+   <!--  <?php include 'footer.php' ?>
+ -->
 </body>
 
 </html>

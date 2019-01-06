@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register_Pumper</title>
+		<title>Salary Details</title>
 	</head>
 	<body>
 		 
@@ -14,24 +14,28 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$NIC=$_POST['nic'];
 			$EmpId=$_POST['empid'];
-			$FirstName=$_POST['firstname'];
-			$LastName=$_POST['lastname'];
-			$DOB=$_POST['dob'];
-			$Address=$_POST['address'];
-			$cno=$_POST['cno'];
-			$Basicsalary=$_POST['basicsalary'];
-			$Allowances=$_POST['allowances'];
-			
-			
+			$Date=$_POST['date'];
+			$ITime=$_POST['itime'];
+			$OTime=$_POST['otime'];
+			$Shortages;
+			                               
+			$WorkHour=$OTime-$ITime;
+    
+            $sql1="SELECT Shortages from CashierSale Where EmpId='$EmpId'";
+             $result1=$conn->query($sql1);
+             if($result1->num_rows>0){
+    		while($row=$result1->fetch_assoc()){
+   			 $Shortages=$row['Shortages'];
 
-			$sql="INSERT INTO pumper(NIC,EmpId,FirstName,LastName,DOB,Address,TelephoneNo,BasicSalary,Allowances) VALUES ('$NIC','$EmpId','$FirstName','$LastName','$DOB','$Address','$cno','$Basicsalary','$Allowances')";
+
+
+			$sql="INSERT INTO SalaryDetails(EmpId,Date,InTime,OutTime,WorkHour,Shortges) VALUES ('$EmpId','$Date','$ITime','$OTime','$WorkHour','$Shortages')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='pumperregdeo.php'</script>";
+    			window.location='salarydetails.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;

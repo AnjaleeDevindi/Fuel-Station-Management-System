@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Staff_Salary_Report</title>
+    <title>Staff Salary Report</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -56,21 +56,67 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Salery Details
+                          Salary Details
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+
+
+     <form width=70% method="post" action="salarystaff-insert.php">
+
+         
+       <label for="uprice">Employee ID</label><br><br>
+
+       <select name="empid" id="empid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT EmpId from Employee ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+     $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+$conn -> close();
+?>
+<option>All</option>
+</select><br><br>
+
+
+    <label for="uprice">From</label><br>
+    <input type="date" id="fname" name="from" placeholder="Please select 1st day of required month"><br>
+
+     <label for="uprice">To</label><br>
+    <input type="date" id="fname" name="to" placeholder="Please select last day of required month"><br>
+
     
-      <label for="fid">Employee NIC</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Employee NIC.."><br>
     
-    <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.."><br>
+
+    
       
-    
-  <center>
-    <input type="submit" value="Submit"></center>
-  </form>
+    <center><input type="submit" name="submittime" value="Submit"></center>
+</form>
+ 
 </div>
 
                         <!-- /.panel-body -->
@@ -111,7 +157,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <!-- <?php include 'footer.php' ?> -->
 
 </body>
 

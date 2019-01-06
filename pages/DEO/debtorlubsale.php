@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dabtor_Sales </title>
+    <title>Dabtor Lubricant Sales </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -60,20 +60,70 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Debtor Sales
+                            Debtor Lubricant Sale
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="debtorlubsale-insert.php" method="post">
     <label for="fid">Debtor ID</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Debtor Id.."><br>
+   <select name="debtorid">
+    <?php
 
-    <label for="ftype">Fuel ID</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Fuel Id.."><br>
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT DebtorId from Debtor";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['DebtorId'];
+    echo "<option value='$n'>".$row['DebtorId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    <label for="fid">Lubricant ID</label><br>
+   <select name="lubricantid">
+    <?php
+
+    // include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT LubricantId from Lubricant";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['LubricantId'];
+    echo "<option value='$n'>".$row['LubricantId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>
+   
+    
+   <label for="ftype">Amount</label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Amount.."><br>
+   
+
+    <label for="ftype">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+
+    
 
 
-    <label for="uprice">Amount</label><br>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.."><br>
+    <label for="uprice">Time</label><br>
+    <input type="time" id="time" name="time" placeholder="Enter Time.."><br>
 
     
   <center>
