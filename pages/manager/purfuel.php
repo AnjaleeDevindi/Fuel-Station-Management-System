@@ -59,31 +59,53 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="purfuel-insert.php" method="post">
     <label for="fid">Date</label><br>
-    <input type="Date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
+    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
+
+    <label for="fid">Time</label><br>
+    <input type="Time" id="time" name="time" placeholder="Enter Time.." required><br>
     
        <label for="fid">Fuel  ID</label><br>
-    <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Fuel ID.." required><br>
-    
-       <label for="fid">Fuel Name</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Fuel Name.."><br>
-      
-       <label for="fid">Amount(liters)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).." required><br>
+       <select name="fid" id="fid" placeholder="Enter Fuel ID.." required>
+    <?php
 
-       <label for="fid">Amount(Rs)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(Rs).." required><br>
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT FuelId from fuelprice ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['FuelId'];
+    echo "<option value='$n'>".$row['FuelId']."</option>";
+
+    $count++;
+}
+}
+    
+$conn -> close();
+?>
+</select><br>
+
+    
+      
+       <label for="fid">Fuel Amount(liters)</label><br>
+    <input type="text" id="fuelamount" name="fuelamount" placeholder="Enter Amount(liters).." required><br>
+
+    <label for="fid">Total Price(Rs)</label><br>
+    <input type="text" id="totalprice" name="totalprice" placeholder="Enter Invoice Price(Rs).." required><br>
+
+       <label for="fid">Bowser Number</label><br>
+    <input type="text" id="bowserNo" name="bowserNo" placeholder="Enter Bowser No.." required><br>
+
+    <label for="fid">Invoice Number</label><br>
+    <input type="text" id="invoiceNo" name="invoiceNo" placeholder="Enter Invoice No.." required><br>
         
-       <label for="fid">Paid method</label><br>
-       <input type="radio" name="......" value="Cash"> Cash<br>
-       <input type="radio" name="......" value="Cheque"> Cheque<br>
-       <input type="radio" name="......" value="Credit"> Credit<br>
-           <!-- <select>
-             <option value="Cash">Cash</option>
-             <option value="Cheque">Cheque</option>
-             <option value="Credit">Credit</option>
-      </select><br> -->
+       
       <center><input type="submit" value="Submit"></center>
 
   </form>
