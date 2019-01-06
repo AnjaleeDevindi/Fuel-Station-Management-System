@@ -38,7 +38,6 @@
     <![endif]-->
     
     <?php include 'include/headercashier.php'?>
-
 </head>
 
 <body>

@@ -6,6 +6,8 @@
 <body>
 		<?php
 
+		   session_start();
+
 			include "../dbConnect/dbConnect.php";
 
 
@@ -34,13 +36,13 @@
 
    			$conn -> close();
    			
-				session_start();
+				
 				//$_SESSION["Password"] = "$password";
-				$_SESSION["isLogged"] = True;
-				$_SESSION["Type"]= $Type;
+				$_SESSION['isLogged'] = True;
+				$_SESSION['Type']= $Type;
 				// echo $_SESSION["name"];
                 // echo "$Type";
-                
+                echo "Session".$_SESSION['isLogged'];
 				if($Type == 1){
 					// echo "InDEO".$Type;
 				echo "<script>window.location='DEO/deoindex.php'</script>";
