@@ -21,7 +21,7 @@
 			
 
 
-			$sql="INSERT INTO LubricantPrice(LubricantId,UnitPrice,UnitPricedDate) VALUES ('$FuelId','$UnitPrice','$UpDate')";
+			$sql="INSERT INTO LubricantPrice(LubricantId,UnitPrice,UnitPricedDate) VALUES ('$LubId','$UnitPrice','$UpDate')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

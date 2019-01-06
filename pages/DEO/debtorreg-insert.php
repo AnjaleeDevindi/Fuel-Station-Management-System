@@ -21,7 +21,7 @@
 			$Email=$_POST['email'];
 
 
-			$sql="INSERT INTO Debtor(DebtorId,Name,Address,TelephoneNo,Email) VALUES ('$DebtorId','$DebtorName','$Address','$Cno','$Email')";
+			$sql="INSERT INTO Debtor(DebtorId,DebtorName,Address,TelephoneNo,Email) VALUES ('$DebtorId','$DebtorName','$Address','$Cno','$Email')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
@@ -42,7 +42,7 @@
         ?>
         <label id='helloLabel' >Hello 
 
-        <?php
+        <!-- <?php
              echo $_SESSION['name'] ?>
                  
              </label>
@@ -50,7 +50,7 @@
                     }
                }
                 
-        ?>
+        ?> -->
 	</body>
 </html>
 
