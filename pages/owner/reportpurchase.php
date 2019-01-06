@@ -84,10 +84,6 @@
 
                 if (isset($FromDate) && isset($ToDate)) {
                 
-//                 select * from hockey_stats 
-// where game_date between '2012-03-11 00:00:00' and '2012-05-11 23:59:00' 
-// order by game_date desc;
-                
                     $sql = "SELECT FuelId, Date, Time, FuelAmount, TotalPrice, BowserNo, InvoiceNo FROM fuelpurchase
                     WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
                 $result = $conn->query($sql);
@@ -108,6 +104,30 @@
                 }
                 echo "</table><br><br>";
 }
+
+
+                  $sql = "SELECT LubricantId, Date, TotalPrice, Quantity, InvoiceNo FROM lubricantpurchase
+                    WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
+
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>LubricantId</th><th>Date</th><th>Total Price</th><th>Quantity</th><th>Invoice No</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["LubricantId"]. "</td><td>" . $row["Date"]. "</td><td>" . $row["TotalPrice"]. "</td><td>" . $row["Quantity"]. "</td><td>". $row["InvoiceNo"]. "</td></tr>";
+                }
+                echo "</table><br><br>";
+}
+
 
 
                 }
