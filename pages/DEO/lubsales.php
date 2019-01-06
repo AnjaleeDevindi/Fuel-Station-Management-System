@@ -37,16 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
      <?php include 'include/headerdeo.php'?>
-   
-    <?php
-
-if(empty($_SESSION))
-{
-    echo "<script>window.alert('Please login to continue !');
-                window.location='../login.php'</script>";
-}
-?>
-
+    
 <?php 
 
 // if(isset($_SESSION['Type']))
@@ -149,7 +140,7 @@ if(empty($_SESSION))
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

@@ -35,9 +35,9 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-     <?php include 'include/headerdeo.php'?>
-    <![endif]-->
-
+      -->
+    <?php include 'include/headerdeo.php'?>
+    
 </head>
 
 <body>
@@ -112,7 +112,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

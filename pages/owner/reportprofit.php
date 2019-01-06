@@ -37,7 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <?php include 'include/headerowner.php'?>
-
+    
 </head>
 
 <body background="back-ground.jpg.jpg">
@@ -107,7 +107,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 
