@@ -38,7 +38,7 @@
     <![endif]-->
     
     <?php include 'include/headermanager.php'?>
-
+    
 </head>
 
 <body background="back-ground.jpg.jpg">
@@ -61,31 +61,45 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="purlub-insert.php" method="post">
     <label for="fid">Date</label><br>
-    <input type="date" id="fname" name="firstname" placeholder="Enter Date.." required><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.." required><br>
       
        <label for="fid">Lubricant  ID</label><br>
-    <input type="text" minlength="6" maxlength="10" id="fname" name="firstname" placeholder="Enter Lubricant ID.." required><br>
+     <select name="lubid" id="lubid" placeholder="Enter Lubricant ID.." required>
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT LubricantId   from lubricant ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['LubricantId'];
+    echo "<option value='$n'>".$row['LubricantId']."</option>";
+
+    $count++;
+}
+}
     
-       <label for="fid">Lubricant Name</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Lubricant Name.."><br>
+$conn -> close();
+?>
+</select><br>
       
-       <label for="fid">Amount(liters)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amount(liters).." required><br>
+       <label for="fid">Quantity</label><br>
+    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity.." required><br>
 
        <label for="fid">Amount(Rs)</label><br>
-    <input type="text" id="fname" name="firstname" placeholder="Enter Amout(Rs).." required><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Amount(Rs).." required><br>
+
+     <label for="fid">Invoice No</label><br>
+    <input type="text" id="invoiceNo" name="invoiceNo" placeholder="Enter Invoice No.." required><br>
         
-       <label for="fid">Paid method</label><br>
-       <input type="radio" name="......" value="Cash" required=""> Cash<br>
-       <input type="radio" name="......" value="Cheque"> Cheque<br>
-       <input type="radio" name="......" value="Credit"> Credit<br>
-           <!-- <select>
-             <option value="Cash">Cash</option>
-             <option value="Cheque">Cheque</option>
-             <option value="Credit">Credit</option>
-      </select><br> -->
+       
       <center><input type="submit" value="Submit"></center>
   <center>
   </form>
@@ -94,23 +108,7 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
                 
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Flot Charts Usage
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks, and interactive features. In SB Admin, we are using the most recent version of Flot along with a few plugins to enhance the user experience. The Flot plugins being used are the tooltip plugin for hoverable tooltips, and the resize plugin for fully responsive charts. The documentation for Flot Charts is available on their website, <a target="_blank" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.</p>
-                            <a target="_blank" class="btn btn-default btn-lg btn-block" href="http://www.flotcharts.org/">View Flot Charts Documentation</a>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-6 -->
             </div>
@@ -142,7 +140,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

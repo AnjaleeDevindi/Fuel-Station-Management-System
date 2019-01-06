@@ -23,12 +23,23 @@
 			$dob=$_POST['dob'];
 			$email=$_POST['email'];
 			$type=$_POST['type'];
+			$IntType;
+
+			if (strcmp($type, "DEO")){
+				$IntType = 1;
+			}elseif (strcmp($type, "Manager")) {
+				$IntType = 2;
+			}elseif (strcmp($type, "Cashier")) {
+				$IntType = 3;
+			}elseif (strcmp($type, "Owner")) {
+				$IntType = 4;
+			}
 			
 			$password=$_POST['password'];
 			
 
 
-			$sql="INSERT INTO Employee(NIC,EmpId,FirstName,LastName,TelephoneNo,Address,DOB,Email,Type,Password) VALUES ('$NIC','$EmpId','$fname','$lname','$cno','$address','$dob','$email','$type','$password')";
+			$sql="INSERT INTO Employee(NIC,EmpId,FirstName,LastName,TelephoneNo,Address,DOB,Email,Type,Password) VALUES ('$NIC','$EmpId','$fname','$lname','$cno','$address','$dob','$email','$IntType','$password')";
 			
 			
 				if ($conn->query($sql) === TRUE) {

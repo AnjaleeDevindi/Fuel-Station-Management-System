@@ -6,16 +6,15 @@
 <body>
 		<?php
 
+		   session_start();
+
 			include "../dbConnect/dbConnect.php";
 
 
 			$NIC = $_POST["nic"];
 			$password = $_POST["password"];
-			// $type=$_POST["type"];
-
-			// echo $u;
-			// echo $p;
-
+			
+           
 			$conn = dbConnect();
 
 
@@ -25,41 +24,50 @@
 			$result = mysqli_query($conn , $sql);
 
 			$count = mysqli_num_rows($result);
-
-			// $type=Type;
-			$_SESSION["Type"]=$Type;
 			
-			$_SESSION["NIC"] = $NIC;
-			// echo $_SESSION["name"];
+
 
 			if($count == 1){
-				session_start();
-				$_SESSION["Password"] = "$password";
-				$_SESSION["NIC"] = "$NIC";
-				$_SESSION["Type"]="Type";
-				// echo $_SESSION["name"];
 
-				if(Type=="Data Entry Operator"){
-				echo "<script>window.alert('Login Successful !');
-    			window.location='DEO/deoindex.php'</script>";
+				 while($row=$result->fetch_assoc()){
+				 	$NIC = $row['NIC'];
+				 	$Type = $row['Type'];
+               }
+
+   			$conn -> close();
+   			
+				
+				//$_SESSION["Password"] = "$password";
+				$_SESSION['isLogged'] = True;
+				$_SESSION['Type']= $Type;
+				// echo $_SESSION["name"];
+                // echo "$Type";
+                echo "Session".$_SESSION['isLogged'];
+				if($Type == 1){
+					// echo "InDEO".$Type;
+				echo "<script>window.location='DEO/deoindex.php'</script>";
 				}
-				elseif($type=="Manager"){
-				echo "<script>window.alert('Login Successful !');
-    			window.location='manager/managerindex.php'</script>";
+				elseif($Type == 2){
+					// echo "InManager".$Type;
+				echo "<script>window.location='manager/managerindex.php'</script>";
 				}
-				elseif($type=="Cashier"){
-				echo "<script>window.alert('Login Successful !');
-    			window.location='cashier/cashierindex.php'</script>";
+				elseif($Type == 3){
+					// echo "InCashier".$Type;
+				echo "<script>window.location='cashier/cashierindex.php'</script>";
 				}
-				elseif($type=="Owner"){
-				echo "<script>window.alert('Login Successful !');
-    			window.location='owner/ownerindex.php'</script>";
+				elseif($Type == 4){
+					// echo "InOwner".$Type;
+				echo "<script>window.location='owner/ownerindex.php'</script>";
 				}
-				else{
+
+				}else{
+					// echo "Invalid".$Type;
 				echo "<script>window.alert('Invalid details please try again !');
     			window.location='login.php'</script>";
 			}
-			}
+
+
+			
 		
 		?>
 </body>

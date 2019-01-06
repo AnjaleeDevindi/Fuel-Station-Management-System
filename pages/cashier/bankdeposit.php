@@ -38,6 +38,8 @@
     <![endif]-->
     
      <?php include 'include/headercashier.php'?>
+     
+
 
 </head>
 
@@ -117,7 +119,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

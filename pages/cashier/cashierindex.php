@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +25,6 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -98,7 +98,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

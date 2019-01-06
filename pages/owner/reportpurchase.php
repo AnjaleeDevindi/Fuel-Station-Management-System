@@ -17,6 +17,9 @@
     <!-- MetisMenu CSS -->
     <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+     <!-- MetisMenu CSS -->
+    <link href="../../vendor/metisMenu/table.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -38,7 +41,7 @@
     <![endif]-->
     
     <?php include 'include/headerowner.php'?>
-
+    
 </head>
 
 <body background="back-ground.jpg.jpg">
@@ -60,16 +63,91 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="reportpurchase-insert.php" method="post">
+  <form width=70% action="reportpurchase.php" method="post">
    
        <label for="fid">Date Range</label><br>
-    From:- <input type="date" id="fname" name="firstname" placeholder="Enter Date from.." required><br>
-    To:-   <input type="date" id="fname" name="firstname" placeholder="Enter Date to.." required><br>
+    From:- <input type="date" id="fromdate" name="fromdate" placeholder="Enter Date from.." required><br>
+    To:-   <input type="date" id="todate" name="todate" placeholder="Enter Date to.." required><br>
       
           
   <center>
-    <input type="submit" value="Submit"></center>
+    <input type="submit" value="Submit"></center><br><br>
   </form>
+  
+<?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                include "../../dbConnect/dbConnect.php";
+                 $conn = dbConnect();
+                $FromDate = $_POST['fromdate'];
+                $ToDate = $_POST['fromdate'];
+        
+
+                if (isset($FromDate) && isset($ToDate)) {
+                
+                    $sql = "SELECT FuelId, Date, Time, FuelAmount, TotalPrice, BowserNo, InvoiceNo FROM fuelpurchase
+                    WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>FuelId</th><th>Date</th><th>Time</th><th>Fuel Amount</th><th>Total Price</th><th>BowserNo</th><th>InvoiceNo</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["FuelId"]. "</td><td>" . $row["Date"]. "</td><td>" . $row["Time"]. "</td><td>" . $row["FuelAmount"]. "</td><td>". $row["TotalPrice"]. "</td><td>" . $row["BowserNo"]. "</td><td>" . $row["InvoiceNo"]. "</td></tr>";
+                }
+                echo "</table><br><br>";
+}
+
+
+                  $sql = "SELECT LubricantId, Date, TotalPrice, Quantity, InvoiceNo FROM lubricantpurchase
+                    WHERE Date BETWEEN '$FromDate' AND '$ToDate' ORDER BY Date DESC ";
+
+                $result = $conn->query($sql);
+                
+
+                echo '<table class="blueTable"><tr><th>LubricantId</th><th>Date</th><th>Total Price</th><th>Quantity</th><th>Invoice No</th></tr>';
+
+                if ($result->num_rows > 0) {
+                   
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    // $EmpId = $row["EmpId"];
+                    // echo "$EmpId";
+                     
+                    
+
+                    echo "<tr><td>" . $row["LubricantId"]. "</td><td>" . $row["Date"]. "</td><td>" . $row["TotalPrice"]. "</td><td>" . $row["Quantity"]. "</td><td>". $row["InvoiceNo"]. "</td></tr>";
+                }
+                echo "</table><br><br>";
+}
+
+
+
+                }
+            
+
+                
+
+                $conn -> close();
+
+              
+                
+
+               
+        
+
+
+            }
+
+        ?>   
+
 </div>
 
                         <!-- /.panel-body -->
@@ -110,7 +188,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

@@ -94,8 +94,8 @@
 
     <label for="staff">Register As:</label><br>
 
-      <select name="type">
-        <option value="Data Entry Operator">Data Entry Operator</option>
+      <select name="type" id="type">
+        <option value="DEO">Data Entry Operator</option>
         <option value="Manager">Manager</option>
         <option value="Cashier">Cashier</option>
         <option value="Owner">Owner</option>
@@ -237,7 +237,7 @@ function validateform() {
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

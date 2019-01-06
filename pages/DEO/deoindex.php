@@ -38,7 +38,7 @@
     <![endif]-->
     
     <?php include 'include/headerdeo.php'?>
-
+    
 </head>
 
 <body>
@@ -98,7 +98,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

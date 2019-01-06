@@ -38,7 +38,7 @@
     <![endif]-->
     
     <?php include 'include/headerdeo.php'?>
-
+    
 </head>
 
 <body>
@@ -125,7 +125,10 @@
     <script src="../../data/flot-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
+
     <script src="../../dist/js/sb-admin-2.js"></script>
+
+   <?php include 'include/footer.php' ?>
 
     <!-- <?php include 'footer.php' ?>
  -->

@@ -36,8 +36,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <?php include 'include/headerdeo.php'?>
     
-    <?php include 'include/headerdeo.php'?>
+<?php 
+
+// if(isset($_SESSION['Type']))
+// {
+//     if(!strcmp($_SESSION['Type'],"Manager")) {
+//         echo "<script>window.alert('You are not autherized to view this page !');
+//                 window.location='../index.php'</script>";
+//     }
+// }
+
+?>
 
 </head>
 
@@ -129,7 +140,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
+    <?php include 'include/footer.php' ?>
 
 </body>
 

@@ -1,5 +1,5 @@
 <footer style="position:relative; bottom:-102%" class="footer-distributed">
- <link rel="stylesheet" type="text/css" href="../CSS/footer.css"/>
+ <link rel="stylesheet" type="text/css" href="include/footer.css"/>
 			<div class="footer-left">
 
 				<h3>Fuel<span>Station</span></h3>
