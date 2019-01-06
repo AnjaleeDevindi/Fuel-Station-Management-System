@@ -15,11 +15,11 @@
 			$conn = dbConnect();
 			
 			$PumpId=$_POST['pumpid'];
-			$FuelId=$_POST['fuelid'];
+			
 			$TankId=$_POST['tankid'];
 			
 
-			$sql="INSERT INTO Pump(PumpId,FuelId,TankId) VALUES ('$PumpId','$FuelId','$TankId')";
+			$sql="INSERT INTO Pump(PumpId,TankId) VALUES ('$PumpId','$TankId')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
@@ -34,7 +34,7 @@
 		}
 	?>
 
-		 <?php
+		<!--  <?php
                if(isset($_SESSION['name'])){
                     if($_SESSION['name'] != null){
         ?>
@@ -48,7 +48,7 @@
                     }
                }
                 
-        ?>
+        ?> -->
 	</body>
 </html>
 

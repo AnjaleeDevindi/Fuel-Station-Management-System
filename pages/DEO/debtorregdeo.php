@@ -63,21 +63,21 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="/action_page.php">
+  <form width=70% action="debtorreg-insert.php" method="post">
      <label for="fid">Debtor ID</label><br>
-    <input type="text" id="debtorid" name="debtorid" placeholder="Enter Debtor Id.."><br>
+    <input type="text" id="debtorid" name="debtorid" placeholder="Enter Debtor Id.." minlength="6" maxlength="10" required><br>
 
      <label for="fid">Debtor Name/Company Name</label><br>
-    <input type="text" id="dname" name="debtorname" placeholder="Enter Debtor Name/Company Name .."><br>
+    <input type="text" id="dname" name="debtorname" placeholder="Enter Debtor Name/Company Name .." required><br>
 
     <label for="ftype">Address</label><br>
-    <input type="text" id="address" name="address" placeholder="Your Address.."><br>
+    <input type="text" id="address" name="address" placeholder="Your Address.." required><br>
       
      <label for="ftype">Contact Number</label><br>
-    <input type="text" id="cno" name="contactnumber" placeholder="Your Contact Number.."><br>  
+    <input type="text" id="cno" name="contactnumber" placeholder="Your Contact Number.." required><br>  
 
      <label for="fid">Email</label><br>
-    <input type="text" id="email" name="email" placeholder="Enter Email.."><br>
+    <input type="text" id="email" name="email" placeholder="Enter Email.." required><br>
 
     
 

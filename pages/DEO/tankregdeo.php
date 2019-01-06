@@ -66,14 +66,35 @@
   <form width=70% action="tankreg-insert.php" method=post>
 
      <label for="ftype">TankID</label><br>
-    <input type="text" id="tankid" name="tankid" placeholder="Enter TankID.."><br>
+    <input type="text" id="tankid" name="tankid" placeholder="Enter TankID.." required><br>
 
     <label for="fid">FuelId</label><br>
-    <input type="text" id="fuelid" name="fuelid" placeholder="Enter Fuel ID.."><br>
+     <select name="fuelid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT FuelId from Fuel";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['FuelId'];
+    echo "<option value='$n'>".$row['FuelId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br>
+   <!--  <input type="text" id="fuelid" name="fuelid" placeholder="Enter Fuel ID.."><br> -->
 
     
      <label for="fid">Capacity</label><br>
-    <input type="text" id="capacity" name="capacity" placeholder="Enter Capacity.."><br>
+    <input type="text" id="capacity" name="capacity" placeholder="Enter Capacity.." required><br>
 
     
 
@@ -121,8 +142,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <?php include 'footer.php' ?>
-
+    <!-- <?php include 'footer.php' ?>
+ -->
 </body>
 
 </html>

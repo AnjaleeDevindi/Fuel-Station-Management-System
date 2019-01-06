@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pump_Register</title>
+    <title>Dabtor_Sales </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -45,7 +45,9 @@
 
     <div id="wrapper">
 
+        
        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -58,88 +60,20 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Pump Register
+                            Debtor Sales
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
-  <form width=70% action="pumpreg-insert.php" method="post">
-    <label for="fid">Pump ID</label><br>
-    <input type="text" id="pumpid" name="pumpid" minlength="6" maxlength="10" placeholder="Enter Pump ID.."required><br>
+  <form width=70% action="/action_page.php">
+    <label for="fid">Debtor ID</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Enter Debtor Id.."><br>
 
-     <label for="ftype">Tank ID</label><br>
-     <select name="tankid">
-    <?php
+    <label for="ftype">Fuel ID</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter Fuel Id.."><br>
 
-    include "../../dbConnect/dbConnect.php";
-    $count=0;
-    $conn=dbConnect();
 
-    $sql="SELECT TankId from Tank";
-
-    $result=$conn->query($sql);
-
-    if($result->num_rows>0){
-    while($row=$result->fetch_assoc()){
-    $n=$row['TankId'];
-    echo "<option value='$n'>".$row['TankId']."</option>";
-
-    $count++;
-}
-}
-?>
-</select><br>
-
-    <!--  <label for="fid">Fuel ID</label><br>
-
-    <select name="fuelid">
-        <?php
-
-        include"../../dbConnect/dbConnect.php";
-        $count=0;
-        $conn=dbConnect();
-
-        $sql="SELECT FuelId from Fuel";
-        $result=$conn->query($sql);
-
-        if($result->num_rows>0){
-            while($row=$result->fetch_assoc()){
-                $n=$row['FuelID'];
-                echo"<option value='$n'>".$row['FuelId']."</option>";
-
-                $count++;
-            }
-        }
-        ?>
-    </select><br>
- -->
-    <!--   <select name="fuelid">
-    <?php
-
-    include "../../dbConnect/dbConnect.php";
-    $count=0;
-    $conn=dbConnect();
-
-    $sql="SELECT FuelId from Fuel";
-
-    $result=$conn->query($sql);
-
-    if($result->num_rows>0){
-    while($row=$result->fetch_assoc()){
-    $n=$row['FuelId'];
-    echo "<option value='$n'>".$row['FuelId']."</option>";
-
-    $count++;
-}
-}
-?>
-</select><br> -->
-    <!-- <input type="text" id="fuelid" name="fuelid" placeholder="Enter Fuel ID.."><br>
-
-    -->
-    <!-- <input type="text" id="tankid" name="tankid" placeholder="Enter Tank ID.."><br>
- -->
-     
-
+    <label for="uprice">Amount</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Enter Amount.."><br>
 
     
   <center>
@@ -152,12 +86,7 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
-             
-
-
-
-
-
+                
                 <!-- /.col-lg-6 -->
                 
                 <!-- /.col-lg-6 -->
@@ -170,13 +99,13 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Flot Charts JavaScript -->
     <script src="../../vendor/flot/excanvas.min.js"></script>
@@ -190,8 +119,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    <!-- <?php include 'footer.php' ?>
- -->
+    <?php include 'footer.php' ?>
+
 </body>
 
 </html>

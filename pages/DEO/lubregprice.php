@@ -9,7 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lubricant_Register</title>
+
+    <title>Lubricant Price Register</title>
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -59,7 +61,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            lubricant Register
+                            lubricant Price Register
                         </div>
                         <!-- /.panel-heading -->
                         <div class=panelbody>
@@ -95,10 +97,10 @@
  -->
 
     <label for="uprice">Unit Price</label><br>
-    <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.."><br>
+    <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.." required><br>
 
      <label for="uprice">Unit Priced Date</label><br>
-    <input type="text" id="update" name="update" placeholder="Enter Unit Priced Data..">
+    <input type="date" id="update" name="update" placeholder="Enter Unit Priced Data.." required>
 
   <center>
     <input type="submit" value="Submit"></center>

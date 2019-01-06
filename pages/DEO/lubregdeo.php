@@ -65,11 +65,13 @@
                         <div class=panelbody>
   <form width=70% action="lubreg-insert.php" method="post">
     <label for="fid">Lubricant ID</label><br>
-    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .."><br>
+    <input type="text" id="lubid" name="lubid" placeholder="Enter Lubricant ID .." required><br>
 
     <label for="ftype">Lubricant Type</label><br>
-    <input type="text" id="ltype" name="ltype" placeholder="Enter Lubricant Type .."><br>
+    <input type="text" id="ltype" name="ltype" placeholder="Enter Lubricant Type .." required><br>
 
+    <label for="ftype">Amount </label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter Lubricant Amount .." required><br>
 
    <!--  <label for="uprice">Unit Price</label><br>
     <input type="text" id="uprice" name="uprice" placeholder="Enter Unit Price.."><br>
