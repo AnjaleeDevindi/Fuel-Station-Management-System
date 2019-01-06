@@ -45,15 +45,16 @@
                         <form role="form" action="validate.php" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="NIC" name="nic" type="text" autofocus>
+                                    <input class="form-control" placeholder="NIC" id ="nic", name="nic" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" id ="password" name="password" type="password" value="">
                                 </div>
                                <!--  <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a> -->
                                 <button type="submit" class="btn btn-lg btn-success btn-block" name="login_user">Login</button> 
                             </fieldset>
                         </form>
+
                     </div>
                 </div>
             </div>

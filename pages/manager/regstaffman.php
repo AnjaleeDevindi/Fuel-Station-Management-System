@@ -94,8 +94,8 @@
 
     <label for="staff">Register As:</label><br>
 
-      <select name="type">
-        <option value="Data Entry Operator">Data Entry Operator</option>
+      <select name="type" id="type">
+        <option value="DEO">Data Entry Operator</option>
         <option value="Manager">Manager</option>
         <option value="Cashier">Cashier</option>
         <option value="Owner">Owner</option>
