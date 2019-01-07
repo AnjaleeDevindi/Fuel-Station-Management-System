@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Register_Pumper</title>
+		<title>Register Debtors</title>
 	</head>
 	<body>
 		 
@@ -14,24 +14,19 @@
 			include "../../dbConnect/dbConnect.php";
 			$conn = dbConnect();
 			
-			$NIC=$_POST['nic'];
-			$EmpId=$_POST['empid'];
-			$FirstName=$_POST['firstname'];
-			$LastName=$_POST['lastname'];
-			$DOB=$_POST['dob'];
+			$DebtorId=$_POST['debtorid'];
+			$DebtorName=$_POST['debtorname'];
 			$Address=$_POST['address'];
-			$cno=$_POST['cno'];
-			$Basicsalary=$_POST['basicsalary'];
-			$Allowances=$_POST['allowances'];
-			
-			
+			$Cno=$_POST['contactnumber'];
+			$Email=$_POST['email'];
 
-			$sql="INSERT INTO Pumper(NIC,EmpId,FirstName,LastName,DOB,Address,TelephoneNo,BasicSalary,Allowances) VALUES ('$NIC','$EmpId','$FirstName','$LastName','$DOB','$Address','$cno','$Basicsalary','$Allowances')";
+
+			$sql="INSERT INTO Debtor(DebtorId,DebtorName,Address,TelephoneNo,Email) VALUES ('$DebtorId','$DebtorName','$Address','$Cno','$Email')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
     			echo "<script>window.alert('Successfully added !');
-    			window.location='pumperregdeo.php'</script>";
+    			window.location='debtorregdeo.php'</script>";
 
 		} else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
@@ -47,7 +42,7 @@
         ?>
         <label id='helloLabel' >Hello 
 
-        <?php
+        <!-- <?php
              echo $_SESSION['name'] ?>
                  
              </label>
@@ -55,7 +50,7 @@
                     }
                }
                 
-        ?>
+        ?> -->
 	</body>
 </html>
 

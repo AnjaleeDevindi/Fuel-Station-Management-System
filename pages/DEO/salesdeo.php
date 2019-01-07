@@ -99,9 +99,7 @@
      <label for="uprice">Credit Card Sales</label><br>
     <input type="text" id="cardsales" name="cardsales" placeholder="Enter Credit Card Sales.."><br>
 
-    <label for="uprice">Shortages</label><br>
-    <input type="text" id="short" name="short" placeholder="Enter Shortages.."><br>
-
+    
     
   <center>
       

@@ -66,25 +66,14 @@
          
        <label for="uprice">Employee ID</label><br><br>
 
-       <select name="empid" id="empid">
+       <select name="empid" >
     <?php
 
     include "../../dbConnect/dbConnect.php";
     $count=0;
     $conn=dbConnect();
 
-    $sql="SELECT EmpId from Employee ";
-
-    $result=$conn->query($sql);
-
-    if($result->num_rows>0){
-    while($row=$result->fetch_assoc()){
-    $n=$row['EmpId'];
-    echo "<option value='$n'>".$row['EmpId']."</option>";
-
-    $count++;
-}
-}
+   
      $sql="SELECT EmpId from Pumper";
 
     $result=$conn->query($sql);

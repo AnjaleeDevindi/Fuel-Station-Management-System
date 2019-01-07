@@ -45,21 +45,7 @@
 		}
 	?>
 
-		 <?php
-               if(isset($_SESSION['name'])){
-                    if($_SESSION['name'] != null){
-        ?>
-        <label id='helloLabel' >Hello 
-
-        <?php
-             echo $_SESSION['name'] ?>
-                 
-             </label>
-             <?php
-                    }
-               }
-                
-        ?>
+		
 	</body>
 </html>
 

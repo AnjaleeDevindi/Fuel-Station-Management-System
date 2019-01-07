@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Daily_Cash_From_Shift</title>
+    <title>Salary Advance</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -24,7 +24,6 @@
     <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
 
      <link href="../style.css" rel="stylesheet">
-     <link href="../footer.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
@@ -38,48 +37,92 @@
     <![endif]-->
     
     <?php include 'include/headercashier.php'?>
+
 </head>
 
 <body>
 
     <div id="wrapper">
 
-       
+        
 
         <div id="page-wrapper">
             <div class="row">
-                
+                <div class="col-lg-12">
+                    <h1 class="page-header">Cashier</h1>
+                </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                          Daily Cash From Shifts
+                       <div class="panel-heading">
+                            Salary Advance
                         </div>
-                        <!-- /.panel-heading -->
-                        <div class=panelbody>
-
-                            
-  <form width=70% action="/action_page.php">
-    <label for="fid">Date</label><br>
-    <input type="Date" id="date" name="date" placeholder="Enter Date.." required><br>
-
-    <label for="ftype">Amount To Be Received</label><br>
-    <input type="text" id="amountto" name="amountto" placeholder="Enter the amount of cash to be received.." required><br>
+                             <div class=panelbody>
 
 
-    <label for="uprice">Cash received</label><br>
-    <input type="text" id="cash" name="cash" placeholder="Enter cash received.." required><br>
+
+<form width=70% action="advance-insert.php" method="POST">
+
+    <label for="fid">Employee ID</label><br>
+    <select name="empid" id="empid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT EmpId from Employee ";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+     $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+$conn -> close();
+?>
+
+</select><br>
 
     
-  <center>
-    <input type="submit" value="Submit"></center>
-  </form>
-</div>
 
-                        <!-- /.panel-body -->
+     <label for="advance">Advance</label><br>
+    <input type="text" id="advance" name="advance" ><br>
+
+
+    <label for="uprice">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Salary Advance Date.." required><br>
+
+
+      
+    <input type="submit" name="submitLA" value="Submit"></center>
+  </form>
+
+
+
+
+
+                             </div>
+                        
                     </div>
                     <!-- /.panel -->
                 </div>
@@ -100,7 +143,7 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
@@ -122,3 +165,6 @@
 </body>
 
 </html>
+if ($nopay<0){
+                break;
+            } 

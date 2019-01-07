@@ -70,6 +70,9 @@
                                 <li>
                                     <a href="debtorfuelsale.php">Debtor Fuel sales</a>
                                 </li>
+                                 <li>
+                                    <a href="debtorlubsale.php">Debtor Lubricant sales</a>
+                                </li>
                             </ul>
                         </li>
 

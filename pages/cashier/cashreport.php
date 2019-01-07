@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cashier_Index</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../../vendor/morrisjs/morris.css" rel="stylesheet">
+
+     <link href="../style.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <?php include 'include/headercashier.php'?>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Cashier</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                       <div class="panel-heading">
+                            Fuel Cash Sale
+                        </div>
+                             <div class=panelbody>
+
+<form width=70% action="cashreport.php" method="post">
+    <label for="fid">Pumper ID</label><br>
+   <select name="empid">
+    <?php
+
+    include "../../dbConnect/dbConnect.php";
+    $count=0;
+    $conn=dbConnect();
+
+    $sql="SELECT EmpId from Pumper";
+
+    $result=$conn->query($sql);
+
+    if($result->num_rows>0){
+    while($row=$result->fetch_assoc()){
+    $n=$row['EmpId'];
+    echo "<option value='$n'>".$row['EmpId']."</option>";
+
+    $count++;
+}
+}
+?>
+</select><br><br>  
+
+    <label for="ftype">Date</label><br>
+    <input type="date" id="date" name="date" placeholder="Enter Date.."><br>
+
+   
+  <center>
+    <input type="submit" value="Submit"></center>
+  </form>
+
+  <?php
+        
+        
+
+
+       
+             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            include "../../dbConnect/dbConnect.php";
+            $conn = dbConnect();
+            $EmpId=$_POST['empid'];
+            $Date=$_POST['date'];
+           $ToBeRecieved;
+             
+            
+
+            
+             $count=0;
+   
+    $sql="SELECT ToBeRecieved from FuelSale where PumperId='$EmpId' and Date='$Date'";
+     $result=$conn->query($sql);
+
+
+    if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $ToBeRecieved=$row['ToBeRecieved'];
+                    //$TotToBeRecieved=$TotToBeRecieved+$n;
+ 
+                   // $count++; 
+                   
+                }
+                }
+
+                echo"<label for="ftype">AmountToBe</label><br>";
+               echo"<label for="ftype">".$ToBeRecieved."</label><br> ";
+
+                $sql="INSERT INTO CashierSale(Date,PumperId,ToBeRecieved) VALUES ('$Date','$EmpId','$TotToBeRecieved')";
+
+                 
+            
+            
+
+
+                ?>
+
+<!-- <?php
+        
+        
+
+
+       
+             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            include "../../dbConnect/dbConnect.php";
+            $conn = dbConnect();
+            $EmpId=$_POST['empid'];
+            $Date=$_POST['Date'];
+            $TotToBeRecieved=0;
+            $AmountRecieved;
+            $Shortages;
+
+            // $UnitPrice=$_POST['unitprice'];
+            // $UpDate=$_POST['unitpriceddate'];
+            
+             $count=0;
+    //  include "../../dbConnect/dbConnect.php";      
+    // $conn=dbConnect();
+
+    $sql="SELECT ToBeRecieved from FuelSale where EmpId='$EmpId' and Date='$Date'";
+
+    if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $n=$row['ToBeRecieved'];
+                    $TotToBeRecieved=$TotToBeRecieved+$n;
+
+                    $count++;
+                   
+                }
+                }
+                ?> -->
+               <!-- <label for="ftype">".$Date."</label><br>
+               <label for="ftype">".$TotToBeRecieved."</label><br>
+
+               <form width=70% action="cashreport.php" method="post">
+                <label for="ftype">Amount Recieved</label><br>
+                <input type="text" id="arecieved" name="arecieved" placeholder="Enter Amount Recieved.."><br>
+               <?php
+
+             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            // include "../../dbConnect/dbConnect.php";
+            // $conn = dbConnect();
+
+            $AmountRecieved=$_POST['arecieved'];
+
+            $Shortages=$TotToBeRecieved-$AmountRecieved;
+        }
+
+
+                $sql="INSERT INTO CashierSale(Date,PumperId,ToBeRecieved,AmountRecieved,Shortages) VALUES ('$Date','$PumperId','$TotToBeRecieved','$AmountRecieved','$Shortages')";
+            
+            
+                if ($conn->query($sql) === TRUE) {
+                echo "<script>window.alert('Successfully added !');
+                window.location='cashreport.php'</script>";
+
+        } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+
+
+    
+
+
+          
+    ?> -->
+
+
+
+
+                             </div>
+                        
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+                
+                <!-- /.col-lg-6 -->
+                
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="../../vendor/flot/excanvas.min.js"></script>
+    <script src="../../vendor/flot/jquery.flot.js"></script>
+    <script src="../../vendor/flot/jquery.flot.pie.js"></script>
+    <script src="../../vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../../vendor/flot/jquery.flot.time.js"></script>
+    <script src="../../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="../../data/flot-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../dist/js/sb-admin-2.js"></script>
+
+    <?php include 'include/footer.php' ?>
+
+</body>
+
+</html>

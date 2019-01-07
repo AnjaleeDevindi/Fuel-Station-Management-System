@@ -60,7 +60,7 @@
                         </li>
 
                           <li>
-                            <a href="cashcashier.php"><i class="fa fa-bar-chart-o fa-fw"></i> Daily Cash from Shifts<span class="fa arrow"></span></a>
+                            <a href="cashreport.php"><i class="fa fa-bar-chart-o fa-fw"></i> Daily Cash from Shifts<span class="fa arrow"></span></a>
                             
                         </li>
 

@@ -27,7 +27,7 @@
 			$Short=$_POST['short'];
 			$TotAmnt = 0;
 			
-			$sql = "SELECT UnitPrice FROM fuelprice WHERE 	(FuelId = '$FuelId' AND UnitPricedDate = '$Date') ";
+			$sql = "SELECT UnitPrice FROM FuelPrice WHERE 	(FuelId = '$FuelId' AND UnitPricedDate = '$Date') ";
 			$result = $conn->query($sql);
         
            
@@ -38,7 +38,7 @@
         			$TotAmnt = ($CMreading - $OpenReading - $Short) * $row["UnitPrice"] ;
     			}
 
-    			$sql="INSERT INTO FuelSale(PumpId,PumperId,OMReading,CMReading,Stime,Etime,Date,DebtorSales,CardSales,Shortages,TotalAmount) VALUES ('$PumpId','$PumperId','$OpenReading','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales','$Short','$TotAmnt')";
+    			$sql="INSERT INTO FuelSale(PumpId,PumperId,OMReading,CMReading,Stime,Etime,Date,DebtorSales,CardSales,TotalAmount) VALUES ('$PumpId','$PumperId','$OpenReading','$CMreading','$Stime','$Etime','$Date','$DebtorSales','$Cardsales','$TotAmnt')";
 			
 			
 				if ($conn->query($sql) === TRUE) {
